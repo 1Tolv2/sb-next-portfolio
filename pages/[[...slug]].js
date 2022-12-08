@@ -1,16 +1,58 @@
-import { getStoryblokApi } from "@storyblok/react"
+import {
+  getStoryblokApi,
+  useStoryblokState,
+  StoryblokComponent,
+} from "@storyblok/react";
+import Layout from "../WS/Layout";
 
-export default function Page() {
-return <div>Hello World!</div>
+export default function Page({ story }) {
+  story = useStoryblokState(story);
+  return (
+    <Layout story={story}>
+      <StoryblokComponent blok={story.content} />
+    </Layout>
+  );
 }
 
 export async function getStaticPaths() {
-    const storyblokApi = getStoryblokApi();
-    
-  let {data}  = await storyblokApi.get("cdn/links/")
-    console.log("DATA", data)
-    return {
-        paths: [{params: {slug: "home"}}],
-        fallback: false
+  const storyblokApi = getStoryblokApi();
+
+  let { data } = await storyblokApi.get("cdn/links");
+  const { links } = data;
+  const hiddenSlugs = ["config"];
+
+  let paths = [];
+  Object.keys(links).forEach((linkKey) => {
+    if (links[linkKey].is_folder || hiddenSlugs.includes(links[linkKey].slug)) {
+      return;
+    } else if (links[linkKey].slug === "home") {
+      paths.push({ params: { slug: [""] } });
+    } else {
+      const slug = links[linkKey].slug;
+      let splittedSlug = slug.split("/");
+      paths.push({ params: { slug: splittedSlug } });
     }
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  console.log("PARAMS", params);
+  let slug = params.slug ? params.slug.join("/") : "home";
+  let sbParams = {
+    version: "draft",
+  };
+
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+  console.log("DATA", data);
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+    },
+  };
 }
