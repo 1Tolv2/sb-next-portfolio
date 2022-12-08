@@ -4,7 +4,10 @@
   "description": "portfolio built in next.js and storyblok",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -17,8 +20,10 @@
   },
   "homepage": "https://github.com/SofiaJohnsson/sb-next-portfolio#readme",
   "dependencies": {
+    "@storyblok/react": "1.0.8",
+    "axios": "^1.2.1",
     "next": "^13.0.6",
     "react": "^18.2.0",
-    "react-router": "^6.4.5"
+    "react-dom": "^18.2.0"
   }
 }
