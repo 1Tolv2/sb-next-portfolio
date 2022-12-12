@@ -7,7 +7,7 @@ const Button = ({ type, children }) => {
     </div>
   ) : (
     <div
-      className="flex justify-center items-center text-neutral bg-primary-main w-fit px-16 py-4 rounded"
+      className="flex justify-center items-center text-neutral bg-primary-main w-fit px-14 py-3 rounded"
       onClick={() => console.log("Clicked")}
     >
       {children}

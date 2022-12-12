@@ -2,12 +2,12 @@ import React from "react";
 
 const Headings = {
   h1: (children) => (
-    <h1 className="font-sans font-mediu text-5xl lg:text-8xl lg:leading-tight">
+    <h1 className="font-sans font-medium text-5xl lg:text-8xl leading-tight">
       {children}
     </h1>
   ),
   h2: (children) => (
-    <h2 className="font-serif font-medium text-4xl text-primary-main lg:text-6xl lg:leading-tight">
+    <h2 className="font-serif font-medium text-4xl text-primary-main lg:text-6xl leading-tight">
       {children}
     </h2>
   ),

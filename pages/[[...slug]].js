@@ -5,10 +5,10 @@ import {
 } from "@storyblok/react";
 import Layout from "../WS/Layout";
 
-export default function Page({ story }) {
+export default function Page({ story, configData }) {
   story = useStoryblokState(story);
   return (
-    <Layout story={story}>
+    <Layout story={story} configData={configData}>
       <StoryblokComponent blok={story.content} />
     </Layout>
   );
@@ -40,7 +40,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log("PARAMS", params);
   let slug = params.slug ? params.slug.join("/") : "home";
   let sbParams = {
     version: "draft",
@@ -48,10 +47,13 @@ export async function getStaticProps({ params }) {
 
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
-  console.log("DATA", data);
+  const configData = await storyblokApi.get(`cdn/stories`, {
+    starts_with: "config",
+  });
   return {
     props: {
       story: data ? data.story : false,
+      configData: configData ? configData.data.stories[0] : false,
       key: data ? data.story.id : false,
     },
   };

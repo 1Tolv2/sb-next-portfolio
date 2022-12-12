@@ -10,7 +10,7 @@ module.exports = {
     colors: {
       primary: { main: "#003153", light: "#348AA7" },
       secondary: { main: "#5DD39E", dark: "" },
-      accent: { main: "#FF686B" },
+      accent: { main: "#FF686B", dark: "#FF5C5F" },
       neutral: "#F7F7FF",
       black: "#000000",
     },
@@ -25,10 +25,16 @@ module.exports = {
       height: {
         100: "48rem",
       },
+      maxWidth: {
+        150: "50vw",
+      },
     },
   },
   plugins: [],
   safelist: [
-    { pattern: /(top|bottom|left|right)-(?:\b|-)([1-9]{1,2}[0]?|100)\b/ },
+    {
+      pattern: /(top|bottom|left|right)-(?:\b|-)([1-9]{1,2}[0]?|100)\b/,
+      variants: ["md", "lg"],
+    },
   ],
 };

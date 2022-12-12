@@ -8,31 +8,32 @@ const Hero = ({ blok }) => {
   console.log("BLOK", blok);
 
   const avatar = blok?.image?.[0];
-  console.log("AVATAR", avatar);
 
   return (
     <>
-      <div className="flex flex-col justify-center items-start w-full h-full max-w-4xl">
-        <div className="w-3/4 max-w-4xl">
+      <div className="flex flex-col justify-center items-start w-full md:h-full max-w-4xl">
+        <div className="h-fit w-full md:w-fit lg:h-auto lg:w-3/4 xl:max-w-4xl">
           <Heading type="h1">{blok?.heading?.toUpperCase()}</Heading>
-          <AccentLine />
+          <div className="relative z-10 mix-blend-darken w-full lg:w-screen md:max-w-150">
+            <AccentLine />
+          </div>
           <Heading type="h2">{blok?.preamble}</Heading>
         </div>
-        <div className="flex my-4 items-center">
-          <div className="mr-28">
+        <div className="flex w-full justify-evenly md:justify-start md:flex-col lg:flex-row lg:my-4 items-center">
+          <div className="lg:mr-28 my-4 lg:mb-auto ">
             <Button>
-              <Text type="emphasizeBig">View CV</Text>
+              <Text type="emphasize">View CV</Text>
             </Button>
           </div>
           <Text>{blok?.email?.email}</Text>
         </div>
       </div>
-      <div className="flex justify-center self-center w-full max-w-3xl h-100 truncate">
-        <div className="avatar_bg relative left-0 top-32 flex justify-center items-center bg-secondary-main">
+      <div className="relative lg:bottom-16 flex md:justify-center self-center w-full h-96 lg:max-w-3xl lg:h-100 truncate">
+        <div className="avatar_bg relative left-0 lg:top-32 flex justify-center items-center bg-secondary-main">
           <div
-            className={`h-fit w-fit absolute ${
+            className={`h-fit w-fit absolute lg:${
               (avatar?.y_axis > 0 ? "top-" : "bottom") + avatar?.y_axis
-            } ${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
+            } lg:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
           >
             <img
               src={avatar?.image_file?.[0]?.filename}
