@@ -7,8 +7,8 @@ const Page = ({ blok }) => {
     <div {...storyblokEditable(blok)}>
       {blok.body.map((nestedBlok) => {
         return (
-          <Section blok={nestedBlok}>
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          <Section blok={nestedBlok} key={nestedBlok._uid}>
+            <StoryblokComponent blok={nestedBlok} />
           </Section>
         );
       })}
