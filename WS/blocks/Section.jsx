@@ -4,7 +4,7 @@ import { storyblokEditable } from "@storyblok/react";
 const Section = ({ blok, children }) => {
   return (
     <div
-      className="w-screen h-screen px-4 md:px-32 flex flex-col-reverse md:flex-row justify-center align-center"
+      className={`bg-${blok?.background_color} w-screen min-h-screen py-10 px-4 md:px-10 lg:px-32 flex flex-col-reverse md:flex-row justify-center items-center`}
       {...storyblokEditable(blok)}
     >
       {children}

@@ -9,7 +9,7 @@ module.exports = {
     fontFamily: { sans: ["Roboto,Helvetica"], serif: ["Bitter"] },
     colors: {
       primary: { main: "#003153", light: "#348AA7" },
-      secondary: { main: "#5DD39E", dark: "" },
+      secondary: { main: "#5DD39E", dark: "#56C090" },
       accent: { main: "#FF686B", dark: "#FF5C5F" },
       neutral: "#F7F7FF",
       black: "#000000",
@@ -36,5 +36,13 @@ module.exports = {
       pattern: /(top|bottom|left|right)-(?:\b|-)([1-9]{1,2}[0]?|100)\b/,
       variants: ["md", "lg"],
     },
+    {
+      pattern:
+        /fill-(primary-main|primary-light|secondary-main|secondary-dark|accent-dark|accent-main)/,
+    },
+    { pattern: /w-\d/ },
+    "text-center",
+    "md:flex-row-reverse",
+    "md:flex-row",
   ],
 };
