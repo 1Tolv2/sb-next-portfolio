@@ -10,11 +10,21 @@ const Header = ({ config, story }) => {
     <nav className="h-36 flex justify-between items-center">
       {story?.content?.component === "page" ? (
         <>
-          {" "}
           <div className="flex items-center">
-            <div className="relative z-20 flex justify-center items-center mx-3 md:mx-12 bg-secondary-main h-20 w-20 rounded-full">
-              <img className="relative right-px" src={logo?.filename} />
-            </div>
+            <Link href="/">
+              {isMenuOpen ? (
+                <div className="relative z-20 flex justify-center items-center mx-3 md:mx-12 bg-secondary-main h-20 w-20 rounded-full">
+                  <img className="relative right-px" src={logo?.filename} />
+                </div>
+              ) : (
+                <div className="fixed z-40 flex justify-center items-center mx-3 md:mx-12 bg-secondary-main h-20 w-20 rounded-full">
+                  <img className="relative right-px" src={logo?.filename} />
+                </div>
+              )}
+              <div className="relative z-20 flex justify-center items-center mx-3 md:mx-12 bg-secondary-main h-20 w-20 rounded-full">
+                <img className="relative right-px" src={logo?.filename} />
+              </div>
+            </Link>
             <div className="-ml-2 md:hidden self-end">
               {!isMenuOpen && (
                 <span
@@ -88,7 +98,40 @@ const Header = ({ config, story }) => {
           </ul>
         </>
       ) : (
-        <div></div>
+        <>
+          <div className="flex items-center">
+            <span className="text-2xl ml-7">
+              <Link href="/">&#8617;</Link>
+            </span>
+            <Link href="/">
+              <div className="relative z-20 flex justify-center items-center mx-3 md:mx-12 bg-secondary-main h-20 w-20 rounded-full">
+                <img className="relative right-px" src={logo?.filename} />
+              </div>
+            </Link>
+          </div>
+          <ul className="flex justify-end w-full md:w-fit  ">
+            {config?.content?.navigation_right?.map((navItem) => {
+              return (
+                <li key={navItem._uid} className="md:mr-14 w-fit">
+                  <Link
+                    className="flex items-center"
+                    href={navItem?.link?.url || "/"}
+                  >
+                    {navItem.icon !== "" && (
+                      <img
+                        className="w-12 mr-3"
+                        src={navItem?.icon?.filename}
+                      />
+                    )}
+                    {navItem.text && (
+                      <Text type="emphasizeBig">{navItem.text}</Text>
+                    )}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </>
       )}
     </nav>
   );
