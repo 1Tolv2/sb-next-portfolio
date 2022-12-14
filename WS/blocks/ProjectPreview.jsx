@@ -3,12 +3,15 @@ import Heading from "../block-components/Typography/Heading";
 import Preamble from "../block-components/Typography/Preamble";
 import Text from "../block-components/Typography/Text";
 import AccentLine from "../block-components/AccentLine";
+import Link from "next/link";
 
 const ProjectPreview = ({ blok }) => {
   // console.log("BLOK", blok);
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-5 items-end">
       {blok?.projects?.map((project) => {
+        console.log("BLOK", project);
+
         const nestedBlok = project?.content;
         return (
           <div className="h-fit w-full">
@@ -16,21 +19,6 @@ const ProjectPreview = ({ blok }) => {
               <Heading type="h3">{nestedBlok?.title}</Heading>
             </div>
             <div className="relative">
-              {/* <div
-                style={{ "var(--image-url)": project?.images?.[0]?.filename }}
-                className="w-full h-full bg-[image:var(--image-url)] bg-center bg-contain"
-              >
-                <img src="/chat-app-thumbnail.svg" />
-                <div />
-              </div> 
-                <img
-                className="absolute top-0 left-0 w-full h-auto"
-                src={
-                  project?.platform === "mobile"
-                    ? "/mobile-frame.svg"
-                    : "/desktop-frame.svg"
-                }
-              /> */}
               <Text>{nestedBlok?.description}</Text>
               <AccentLine />
               <div className="flex flex-wrap items-center">
@@ -44,6 +32,19 @@ const ProjectPreview = ({ blok }) => {
                     </>
                   );
                 })}
+              </div>
+              <div className="grid grid-cols-2 items-stretch justify-between my-3 ">
+                <Link className="flex ml-1" href={nestedBlok?.github_link?.url}>
+                  <Text type="emphasize">Go to GitHub</Text>
+                  <img className=" ml-2" src="/external_link_icon.svg" />
+                </Link>
+                <Link
+                  className="flex justify-end h-fit mr-2"
+                  href={nestedBlok?.github_link?.url}
+                >
+                  <Text type="emphasize">Go to GitHub</Text>
+                  <img className="ml-2" src="/external_link_icon.svg" />
+                </Link>
               </div>
               <img className="w-full" src={nestedBlok?.images?.[0]?.filename} />
             </div>
