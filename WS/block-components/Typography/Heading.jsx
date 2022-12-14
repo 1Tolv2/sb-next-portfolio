@@ -3,7 +3,7 @@ import React from "react";
 const Headings = {
   h1: (children, isBackgroundDark) => (
     <h1
-      className={`font-sans font-medium text-5xl lg:text-8xl leading-tight text-${
+      className={`font-sans font-medium text-5xl lg:text-8xl my-3 text-${
         isBackgroundDark ? "neutral" : "black"
       }`}
     >
@@ -12,7 +12,7 @@ const Headings = {
   ),
   h2: (children, isBackgroundDark) => (
     <h2
-      className={`font-serif font-medium text-4xl lg:text-6xl leading-tight text-${
+      className={`font-serif font-medium text-4xl lg:text-6xl my-3 text-${
         isBackgroundDark ? "neutral" : "primary-main"
       }`}
     >

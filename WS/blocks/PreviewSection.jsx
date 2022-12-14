@@ -32,11 +32,13 @@ const PreviewSection = ({ blok }) => {
         })}
         <div className="self-end mt-10 mr-14">
           <Link href={blok?.page_link?.url || "/"}>
-            <Text type="emphasizeBig">{blok?.link_text}</Text>
+            <Text type="emphasizeBig" isBackgroundDark={isBgColorDark}>
+              {blok?.link_text}
+            </Text>
           </Link>
           <span
-            className="h-2 w-12 ml-24
-           text-primary-light"
+            className={`h-2 w-12 ml-24
+           text-${isBgColorDark ? "neutral" : "primary-light"}`}
           >
             {"-------------------------------------------------->"}
           </span>
