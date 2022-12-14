@@ -18,6 +18,7 @@ const components = {
   "project-preview-list": ProjectPreviewList,
   "titled-grid": TitledGrid,
   "single-content": SingleContent,
+  "sub-page": Page,
 };
 
 storyblokInit({

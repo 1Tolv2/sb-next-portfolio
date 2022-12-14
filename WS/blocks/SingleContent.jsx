@@ -6,7 +6,6 @@ import { StoryblokComponent } from "@storyblok/react";
 import Link from "next/link";
 
 const SingleContent = ({ blok }) => {
-  console.log("BLOK", blok);
   const bgColor = blok?.body?.find(
     (item) => item.component === "section-config"
   )?.background_color;
@@ -36,7 +35,7 @@ const SingleContent = ({ blok }) => {
       </div>
       {blok?.link_text && (
         <div className="self-end mt-10 mr-14">
-          <Link href={blok?.page_link?.url || "/"}>
+          <Link href={blok?.page_link?.cached_url || "/"}>
             <Text type="emphasizeBig" isBackgroundDark={isBgColorDark}>
               {blok?.link_text}
             </Text>
