@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Text from "../block-components/Typography/Text";
 
 const Header = ({ config, story }) => {
@@ -12,7 +13,9 @@ const Header = ({ config, story }) => {
         {config?.content?.navigation?.map((navItem) => {
           return (
             <li key={navItem._uid} className="mr-14">
-              <Text type="emphasizeBig">{navItem.text}</Text>
+              <Link href={"#" + navItem.text}>
+                <Text type="emphasizeBig">{navItem.text}</Text>
+              </Link>
             </li>
           );
         })}

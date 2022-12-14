@@ -8,9 +8,12 @@ const Page = ({ blok }) => {
       {blok.body.map((nestedBlok) => {
         return (
           <Section
-            blok={nestedBlok?.body?.find(
-              (item) => item.component === "section-config"
-            )}
+            blok={{
+              ...nestedBlok?.body?.find(
+                (item) => item.component === "section-config"
+              ),
+              section_name_id: nestedBlok?.preamble,
+            }}
             key={nestedBlok?._uid}
           >
             <StoryblokComponent blok={nestedBlok} />

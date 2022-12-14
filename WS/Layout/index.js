@@ -5,9 +5,9 @@ import Footer from "./Footer";
 const Layout = ({ story, configData, children }) => {
   return (
     <>
-      {/* <Header story={story} config={configData} /> */}
+      <Header story={story} config={configData} />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
