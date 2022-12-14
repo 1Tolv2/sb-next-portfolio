@@ -16,12 +16,14 @@ const ImageTextSideBySide = ({ blok }) => {
         blok?.invert_order ? "-reverse" : ""
       }`}
     >
-      <div className=" w-full mx-auto mb-10 md:mb-0">
+      <div className="w-full mx-auto mb-10 md:mb-0">
         <div className="relative mx-auto h-fit w-3/4">
           <Preamble isBackgroundDark={isBgColorDark}>{blok?.preamble}</Preamble>
+
           <Heading type="h2" isBackgroundDark={isBgColorDark}>
             {blok?.title}
           </Heading>
+
           <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
           <div className="w-full mt-5 md:mt-10">
             <Heading type="h3" isBackgroundDark={isBgColorDark}>

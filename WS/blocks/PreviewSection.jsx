@@ -17,9 +17,11 @@ const PreviewSection = ({ blok }) => {
     <div className="w-full h-full flex flex-col lg:justify-between">
       <div className="relative mx-auto h-fit w-3/4 lg:w-full">
         <Preamble isBackgroundDark={isBgColorDark}>{blok?.preamble}</Preamble>
-        <Heading type="h2" isBackgroundDark={isBgColorDark}>
-          {blok?.title}
-        </Heading>
+        <div className="-mt-3">
+          <Heading type="h2" isBackgroundDark={isBgColorDark}>
+            {blok?.title}
+          </Heading>
+        </div>
         <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
       </div>
       <div className="flex flex-col">
