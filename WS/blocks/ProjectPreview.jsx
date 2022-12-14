@@ -9,8 +9,6 @@ const ProjectPreview = ({ blok }) => {
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-5 items-end">
       {blok?.projects?.map((project) => {
-        console.log("BLOK", project);
-
         const nestedBlok = project?.content;
         return (
           <div className="h-fit w-full">

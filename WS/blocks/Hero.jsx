@@ -11,7 +11,6 @@ const Hero = ({ blok }) => {
     bgColor !== "neutral" &&
     bgColor !== "white" &&
     typeof bgColor !== "undefined";
-  console.log("IS", isBgColorDark);
   return (
     <>
       <div className="flex flex-col justify-center items-start w-full md:h-full max-w-4xl">
