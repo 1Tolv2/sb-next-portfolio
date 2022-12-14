@@ -5,7 +5,8 @@ import Text from "../block-components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
 import Link from "next/link";
 
-const PreviewSection = ({ blok }) => {
+const SingleContent = ({ blok }) => {
+  console.log("BLOK", blok);
   const bgColor = blok?.body?.find(
     (item) => item.component === "section-config"
   )?.background_color;
@@ -14,7 +15,7 @@ const PreviewSection = ({ blok }) => {
     bgColor !== "white" &&
     typeof bgColor !== "undefined";
   return (
-    <div className="w-full h-full flex flex-col lg:justify-between">
+    <div className="w-full flex flex-col lg:justify-between">
       <div className="relative mx-auto h-fit w-3/4 lg:w-full">
         <Preamble isBackgroundDark={isBgColorDark}>{blok?.preamble}</Preamble>
         <div className="-mt-3">
@@ -24,7 +25,7 @@ const PreviewSection = ({ blok }) => {
         </div>
         <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
       </div>
-      <div className="flex flex-col">
+      <div className="flex grow justify-center flex-col ">
         {blok?.body?.map((nestedBlok) => {
           return (
             nestedBlok.component !== "section-config" && (
@@ -32,6 +33,8 @@ const PreviewSection = ({ blok }) => {
             )
           );
         })}
+      </div>
+      {blok?.link_text && (
         <div className="self-end mt-10 mr-14">
           <Link href={blok?.page_link?.url || "/"}>
             <Text type="emphasizeBig" isBackgroundDark={isBgColorDark}>
@@ -45,9 +48,9 @@ const PreviewSection = ({ blok }) => {
             {"-------------------------------------------------->"}
           </span>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
-export default PreviewSection;
+export default SingleContent;

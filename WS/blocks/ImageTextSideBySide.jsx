@@ -5,6 +5,7 @@ import Preamble from "../block-components/Typography/Preamble";
 import Text from "../block-components/Typography/Text";
 
 const ImageTextSideBySide = ({ blok }) => {
+  const avatar = blok?.image?.[0];
   const bgColor = blok?.body?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
@@ -19,7 +20,6 @@ const ImageTextSideBySide = ({ blok }) => {
       <div className="w-full mx-auto mb-10 md:mb-0">
         <div className="relative mx-auto h-fit w-3/4">
           <Preamble isBackgroundDark={isBgColorDark}>{blok?.preamble}</Preamble>
-
           <Heading type="h2" isBackgroundDark={isBgColorDark}>
             {blok?.title}
           </Heading>
@@ -41,7 +41,7 @@ const ImageTextSideBySide = ({ blok }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center relative text-center w-full max-w-2xl mx-auto overflow-y-clip">
+      <div className="flex items-center relative text-center w-full max-w-2xl mx-auto">
         <div className="w-full relative mx-auto overflow-y-clip">
           <svg
             className="w-full h-auto"
@@ -71,6 +71,14 @@ const ImageTextSideBySide = ({ blok }) => {
               ry="101.225"
             />
           </svg>
+        </div>
+        <div className="flex justify-center items-center absolute w-full h-auto">
+          <img
+            className={`absolute h-72 lg:${
+              (avatar?.y_axis > 0 ? "top-" : "bottom") + avatar?.y_axis
+            } lg:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
+            src={avatar?.image_file?.filename}
+          />
         </div>
       </div>
     </div>

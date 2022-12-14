@@ -4,7 +4,6 @@ import Text from "../block-components/Typography/Text";
 
 const Header = ({ config, story }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // console.log("CONFIG", config?.content);
   const logo = config?.content?.logo?.[0];
   return (
     <nav className="h-36 flex justify-between items-center">
@@ -33,7 +32,7 @@ const Header = ({ config, story }) => {
                 {config?.content?.navigation_left?.map((navItem) => {
                   return (
                     <li key={navItem._uid} className="mb-1">
-                      <Link href={"#" + navItem.text}>
+                      <Link href={"#" + navItem.text || "/"}>
                         <Text isBackgroundDark={true} type="emphasizeBig">
                           {"# " + navItem.text}
                         </Text>
@@ -49,7 +48,10 @@ const Header = ({ config, story }) => {
           {config?.content?.navigation_left?.map((navItem) => {
             return (
               <li key={navItem._uid} className="mr-14">
-                <Link className="flex items-center" href={"#" + navItem.text}>
+                <Link
+                  className="flex items-center"
+                  href={"#" + navItem.text || "/"}
+                >
                   <span className="text-accent-main text-3xl">{"# "}</span>
                   <Text type="emphasizeBig">{navItem.text}</Text>
                 </Link>
@@ -62,7 +64,10 @@ const Header = ({ config, story }) => {
         {config?.content?.navigation_right?.map((navItem) => {
           return (
             <li key={navItem._uid} className="md:mr-14 w-fit">
-              <Link className="flex items-center" href={navItem?.link?.url}>
+              <Link
+                className="flex items-center"
+                href={navItem?.link?.url || "/"}
+              >
                 {navItem.icon !== "" && (
                   <img className="w-12 mr-3" src={navItem?.icon?.filename} />
                 )}

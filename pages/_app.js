@@ -1,23 +1,23 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import "../styles/globals.css";
-import ArticlePreview from "../WS/blocks/ArticlePreview";
+import ArticlePreviewList from "../WS/blocks/ArticlePreviewList";
 import Hero from "../WS/blocks/Hero";
 import ImageTextSideBySide from "../WS/blocks/ImageTextSideBySide";
 import NavigationLink from "../WS/block-components/NavigationLink";
-import ProjectPreview from "../WS/blocks/ProjectPreview";
+import ProjectPreviewList from "../WS/blocks/ProjectPreviewList";
 import TitledGrid from "../WS/blocks/TitledGrid";
 import Page from "../WS/blocks/Page";
-import PreviewSection from "../WS/blocks/PreviewSection";
+import SingleContent from "../WS/blocks/SingleContent";
 
 const components = {
-  "article-preview": ArticlePreview,
+  "article-preview-list": ArticlePreviewList,
   hero: Hero,
   "image-text-side-by-side": ImageTextSideBySide,
   "navigation-link": NavigationLink,
   page: Page,
-  "project-preview": ProjectPreview,
+  "project-preview-list": ProjectPreviewList,
   "titled-grid": TitledGrid,
-  "preview-section": PreviewSection,
+  "single-content": SingleContent,
 };
 
 storyblokInit({

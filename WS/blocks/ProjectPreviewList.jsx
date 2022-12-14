@@ -5,7 +5,7 @@ import Text from "../block-components/Typography/Text";
 import AccentLine from "../block-components/AccentLine";
 import Link from "next/link";
 
-const ProjectPreview = ({ blok }) => {
+const ProjectPreviewList = ({ blok }) => {
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-5 items-end">
       {blok?.projects?.map((project) => {
@@ -33,7 +33,7 @@ const ProjectPreview = ({ blok }) => {
               <div className="grid grid-rows-2 xl:grid-cols-2 xl:grid-rows-1 items-stretch justify-between my-3 ">
                 <Link
                   className="flex items-center h-fit ml-1 mb-1 lg:mb-0"
-                  href={nestedBlok?.github_link?.url}
+                  href={nestedBlok?.github_link?.url || "/"}
                 >
                   <Text type="emphasize">Go to demo</Text>
                   <img
@@ -43,7 +43,7 @@ const ProjectPreview = ({ blok }) => {
                 </Link>
                 <Link
                   className="flex justify-end items-center h-fit mr-2"
-                  href={nestedBlok?.github_link?.url}
+                  href={nestedBlok?.github_link?.url || "/"}
                 >
                   <Text type="emphasize">View source code</Text>
                   <img
@@ -61,4 +61,4 @@ const ProjectPreview = ({ blok }) => {
   );
 };
 
-export default ProjectPreview;
+export default ProjectPreviewList;

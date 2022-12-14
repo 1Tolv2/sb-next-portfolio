@@ -3,7 +3,7 @@ import Heading from "../block-components/Typography/Heading";
 import Text from "../block-components/Typography/Text";
 import Link from "next/link";
 
-const ArticlePreview = ({ blok }) => {
+const ArticlePreviewList = ({ blok }) => {
   const arrayOfThree = ["", "", ""];
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-24 items-end">
@@ -40,4 +40,4 @@ const ArticlePreview = ({ blok }) => {
   );
 };
 
-export default ArticlePreview;
+export default ArticlePreviewList;

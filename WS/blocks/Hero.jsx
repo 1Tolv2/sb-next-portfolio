@@ -5,6 +5,7 @@ import Heading from "../block-components/Typography/Heading";
 import Text from "../block-components/Typography/Text";
 
 const Hero = ({ blok }) => {
+  // console.log("HERO", blok?.image?.[0]);
   const avatar = blok?.image?.[0];
   const bgColor = blok?.body?.[0]?.background_color;
   const isBgColorDark =
@@ -44,8 +45,8 @@ const Hero = ({ blok }) => {
             } lg:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
           >
             <img
-              src={avatar?.image_file?.[0]?.filename}
-              alt={avatar?.image_file?.[0]?.alt}
+              src={avatar?.image_file?.filename}
+              alt={avatar?.image_file?.alt}
             />
           </div>
         </div>
