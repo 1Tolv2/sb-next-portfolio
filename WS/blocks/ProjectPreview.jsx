@@ -6,7 +6,6 @@ import AccentLine from "../block-components/AccentLine";
 import Link from "next/link";
 
 const ProjectPreview = ({ blok }) => {
-  // console.log("BLOK", blok);
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-5 items-end">
       {blok?.projects?.map((project) => {

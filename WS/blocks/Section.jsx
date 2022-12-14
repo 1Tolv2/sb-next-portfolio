@@ -7,7 +7,7 @@ const Section = ({ blok, children }) => {
     <div
       className={`bg-${
         blok?.background_color
-      } w-screen lg:h-screen min-h-screen py-10 px-4 md:px-10 lg:p-32 flex flex-col-reverse md:flex-row justify-center ${
+      } w-screen min-h-screen py-10 px-4 md:px-10 lg:p-32 flex flex-col-reverse md:flex-row justify-center ${
         blok?.center_content && "items-center"
       }`}
       {...storyblokEditable(blok)}

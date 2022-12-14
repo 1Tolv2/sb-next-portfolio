@@ -21,7 +21,7 @@ const Headings = {
   ),
   h3: (children, isBackgroundDark) => (
     <h3
-      className={`font-sans font-medium my-4 text-xl lg:text-4xl text-${
+      className={`font-sans font-medium my-4 text-xl md:text-2xl lg:text-2xl xl:text-4xl text-${
         isBackgroundDark ? "neutral" : "black"
       }`}
     >
