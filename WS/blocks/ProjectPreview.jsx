@@ -33,20 +33,26 @@ const ProjectPreview = ({ blok }) => {
                   );
                 })}
               </div>
-              <div className="grid grid-cols-2 items-stretch justify-between my-3 ">
+              <div className="grid grid-rows-2 xl:grid-cols-2 xl:grid-rows-1 items-stretch justify-between my-3 ">
                 <Link
-                  className="flex items-center h-fit ml-1"
+                  className="flex items-center h-fit ml-1 mb-1 lg:mb-0"
                   href={nestedBlok?.github_link?.url}
                 >
                   <Text type="emphasize">Go to demo</Text>
-                  <img className="ml-2 h-6" src="/external_link_icon.svg" />
+                  <img
+                    className="ml-2 h-4 lg:h-6"
+                    src="/external_link_icon.svg"
+                  />
                 </Link>
                 <Link
                   className="flex justify-end items-center h-fit mr-2"
                   href={nestedBlok?.github_link?.url}
                 >
                   <Text type="emphasize">View source code</Text>
-                  <img className="ml-2 h-6" src="/external_link_icon.svg" />
+                  <img
+                    className="ml-2 h-4 lg:h-6"
+                    src="/external_link_icon.svg"
+                  />
                 </Link>
               </div>
               <img className="w-full" src={nestedBlok?.images?.[0]?.filename} />
