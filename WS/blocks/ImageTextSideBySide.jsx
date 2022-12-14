@@ -5,45 +5,36 @@ import Preamble from "../block-components/Typography/Preamble";
 import Text from "../block-components/Typography/Text";
 
 const ImageTextSideBySide = ({ blok }) => {
-  console.log("BLOK", blok);
+  const bgColor = blok?.body?.[0]?.background_color;
+  const isBgColorDark =
+    bgColor !== "neutral" &&
+    bgColor !== "white" &&
+    typeof bgColor !== "undefined";
   return (
     <div
       className={`w-full h-fit flex flex-col items-center md:flex-row${
         blok?.invert_order ? "-reverse" : ""
       }`}
     >
-      <div className="flex flex-col items-center justify-center h-fit w-full mx-auto mb-10 md:mb-0">
+      <div className=" w-full mx-auto mb-10 md:mb-0">
         <div className="relative mx-auto h-fit w-3/4">
-          <Preamble>{blok?.preamble}</Preamble>
-          <Heading type="h2">{blok?.heading}</Heading>
-          <Text>{blok?.text}</Text>
+          <Preamble isBackgroundDark={isBgColorDark}>{blok?.preamble}</Preamble>
+          <Heading type="h2" isBackgroundDark={isBgColorDark}>
+            {blok?.title}
+          </Heading>
+          <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
           <div className="w-full mt-5 md:mt-10">
-            <Heading type="h3">My Skills:</Heading>
-            <ul className="flex flex-wrap justify-evenly md:mt-4">
-              <li className="mt-2">
-                <IconWithText icon="next" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="react" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="typescript" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="node" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="postgresql" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="mongodb" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="csharp" />
-              </li>
-              <li className="mt-2">
-                <IconWithText icon="storyblok" />
-              </li>
+            <Heading type="h3" isBackgroundDark={isBgColorDark}>
+              My Skills:
+            </Heading>
+            <ul className="grid grid-cols-3 xl:grid-cols-4 gap-2 md:mt-4">
+              {blok?.skills?.map((skill) => {
+                return (
+                  <li>
+                    <IconWithText icon={skill} />
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

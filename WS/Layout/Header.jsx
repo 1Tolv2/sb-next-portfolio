@@ -2,7 +2,6 @@ import React from "react";
 import Text from "../block-components/Typography/Text";
 
 const Header = ({ config, story }) => {
-  console.log("BLOK: ", config.content);
   const logo = config?.content?.logo?.[0];
   return (
     <nav className="h-36 flex justify-start items-center">

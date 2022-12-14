@@ -7,6 +7,7 @@ import NavigationLink from "../WS/block-components/NavigationLink";
 import ProjectPreview from "../WS/blocks/ProjectPreview";
 import TitledGrid from "../WS/blocks/TitledGrid";
 import Page from "../WS/blocks/Page";
+import PreviewSection from "../WS/blocks/PreviewSection";
 
 const components = {
   "article-preview": ArticlePreview,
@@ -16,6 +17,7 @@ const components = {
   page: Page,
   "project-preview": ProjectPreview,
   "titled-grid": TitledGrid,
+  "preview-section": PreviewSection,
 };
 
 storyblokInit({

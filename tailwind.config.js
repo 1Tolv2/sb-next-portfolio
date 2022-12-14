@@ -13,6 +13,7 @@ module.exports = {
       accent: { main: "#FF686B", dark: "#FF5C5F" },
       neutral: "#F7F7FF",
       black: "#000000",
+      white: "#FFFFFF",
     },
     container: {
       center: true,
@@ -38,7 +39,7 @@ module.exports = {
     },
     {
       pattern:
-        /fill-(primary-main|primary-light|secondary-main|secondary-dark|accent-dark|accent-main)/,
+        /(bg|text|fill)-(primary-main|primary-light|secondary-main|secondary-dark|accent-dark|accent-main|black|white|neutral)/,
     },
     { pattern: /w-\d/ },
     "text-center",

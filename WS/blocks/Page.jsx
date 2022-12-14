@@ -7,7 +7,12 @@ const Page = ({ blok }) => {
     <div {...storyblokEditable(blok)}>
       {blok.body.map((nestedBlok) => {
         return (
-          <Section blok={nestedBlok} key={nestedBlok._uid}>
+          <Section
+            blok={nestedBlok?.body?.find(
+              (item) => item.component === "section-config"
+            )}
+            key={nestedBlok?._uid}
+          >
             <StoryblokComponent blok={nestedBlok} />
           </Section>
         );
