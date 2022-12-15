@@ -1,6 +1,6 @@
 import React from "react";
 import AccentLine from "../components/AccentLine";
-import Button from "../components/Button";
+import Button from "../components/Button/Button";
 import Heading from "../components/Typography/Heading";
 import Text from "../components/Typography/Text";
 

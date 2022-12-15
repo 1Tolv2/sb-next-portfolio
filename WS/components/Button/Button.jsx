@@ -2,16 +2,16 @@ import React from "react";
 
 const Button = ({ type, children }) => {
   return type === "ghost" ? (
-    <div className="" onClick={() => console.log("Clicked")}>
+    <button className="" onClick={() => console.log("Clicked")}>
       {children}
-    </div>
+    </button>
   ) : (
-    <div
+    <button
       className="flex justify-center items-center text-neutral bg-primary-main w-fit px-14 py-3 rounded"
       onClick={() => console.log("Clicked")}
     >
       {children}
-    </div>
+    </button>
   );
 };
 
