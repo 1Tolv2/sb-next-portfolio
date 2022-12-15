@@ -1,10 +1,13 @@
 import React from "react";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
-import Section from "./Section";
+import Section from "../container/Section";
 
 const Page = ({ blok }) => {
   return (
-    <div {...storyblokEditable(blok)}>
+    <div
+      {...storyblokEditable(blok)}
+      className="max-h-screen lg:overflow-y-scroll lg:snap lg:snap-y lg:snap-mandatory"
+    >
       {blok.body.map((nestedBlok) => {
         return (
           <Section
