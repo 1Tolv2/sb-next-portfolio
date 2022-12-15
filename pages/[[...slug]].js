@@ -54,6 +54,33 @@ export async function getStaticProps({ params }) {
   const configData = await storyblokApi.get(`cdn/stories`, {
     starts_with: "config",
   });
+
+  async function getContentData(slug) {
+    const { data } = await storyblokApi.get(`cdn/stories`, {
+      ...sbParams,
+      starts_with: slug,
+      is_startpage: 0,
+    });
+    return data;
+  }
+
+  if (
+    (slug === "projects" || slug === "articles") &&
+    data?.story?.content?.body
+      ?.find((item) => item?.component === "single-content")
+      ?.body?.find(
+        (item) =>
+          item?.component === `${slug.substr(0, slug.length - 1)}-preview-list`
+      )?.projects?.length === 0
+  ) {
+    const contentData = await getContentData(slug);
+    data.story.content.body
+      .find((item) => item.component === "single-content")
+      .body.find(
+        (item) =>
+          item.component === `${slug.substr(0, slug.length - 1)}-preview-list`
+      ).projects = contentData ? contentData?.stories : [];
+  }
   return {
     props: {
       story: data ? data.story : false,
