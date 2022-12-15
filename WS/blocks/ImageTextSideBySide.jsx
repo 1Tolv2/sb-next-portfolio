@@ -3,6 +3,7 @@ import IconWithText from "../components/IconWithText";
 import Heading from "../components/Typography/Heading";
 import Preamble from "../components/Typography/Preamble";
 import Text from "../components/Typography/Text";
+import { StoryblokComponent } from "@storyblok/react";
 
 const ImageTextSideBySide = ({ blok }) => {
   const avatar = blok?.image?.[0];
@@ -41,46 +42,9 @@ const ImageTextSideBySide = ({ blok }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center relative text-center w-full max-w-2xl md:h-auto mx-auto">
-        <div className="w-full relative mx-auto overflow-y-clip">
-          <svg
-            className="w-full h-auto"
-            viewBox="0 0 250 207"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <ellipse
-              className={`fill-${blok.image_secondary_bg_color}`}
-              cx="126.981"
-              cy="124.64"
-              rx="61.0591"
-              ry="124.64"
-            />
-            <ellipse
-              className={`fill-${blok.image_main_bg_color}`}
-              cx="201.009"
-              cy="171.83"
-              rx="48.9914"
-              ry="77.4496"
-            />
-            <ellipse
-              className={`fill-${blok.image_main_bg_color}`}
-              cx="50.9726"
-              cy="148.055"
-              rx="50.9726"
-              ry="101.225"
-            />
-          </svg>
-        </div>
-        <div className="flex justify-center md:items-center absolute w-full h-auto">
-          <img
-            className={`absolute h-72 -bottom-52 sm:${
-              (avatar?.y_axis > 0 ? "top-" : "bottom") + avatar?.y_axis
-            } sm:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
-            src={avatar?.image_file?.filename}
-          />
-        </div>
-      </div>
+      {blok?.image?.map((nestedBlok) => {
+        return <StoryblokComponent blok={nestedBlok} />;
+      })}
     </div>
   );
 };
