@@ -9,7 +9,7 @@ body{
 
 .avatar_bg{
     position: relative;
-width: 750px;
-height: 750px;
-border-radius: 100%;
+    width: 750px;
+    height: 750px;
+    border-radius: 100%;
 }

@@ -35,7 +35,7 @@ module.exports = {
   safelist: [
     {
       pattern: /(top|bottom|left|right)-(?:\b|-)([1-9]{1,2}[0]?|100)\b/,
-      variants: ["md", "lg"],
+      variants: ["sm", "md", "lg"],
     },
     {
       pattern:

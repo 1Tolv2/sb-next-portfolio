@@ -41,7 +41,7 @@ const ImageTextSideBySide = ({ blok }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center relative text-center w-full max-w-2xl mx-auto">
+      <div className="flex items-center relative text-center w-full max-w-2xl md:h-auto mx-auto">
         <div className="w-full relative mx-auto overflow-y-clip">
           <svg
             className="w-full h-auto"
@@ -72,11 +72,11 @@ const ImageTextSideBySide = ({ blok }) => {
             />
           </svg>
         </div>
-        <div className="flex justify-center items-center absolute w-full h-auto">
+        <div className="flex justify-center md:items-center absolute w-full h-auto">
           <img
-            className={`absolute h-72 lg:${
+            className={`absolute h-72 -bottom-52 sm:${
               (avatar?.y_axis > 0 ? "top-" : "bottom") + avatar?.y_axis
-            } lg:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
+            } sm:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
             src={avatar?.image_file?.filename}
           />
         </div>
