@@ -1,13 +1,13 @@
 import React from "react";
-import AccentLine from "../block-components/AccentLine";
-import Button from "../block-components/Button";
-import Heading from "../block-components/Typography/Heading";
-import Text from "../block-components/Typography/Text";
+import AccentLine from "../components/AccentLine";
+import Button from "../components/Button";
+import Heading from "../components/Typography/Heading";
+import Text from "../components/Typography/Text";
 
 const Hero = ({ blok }) => {
   // console.log("HERO", blok?.image?.[0]);
   const avatar = blok?.image?.[0];
-  const bgColor = blok?.body?.[0]?.background_color;
+  const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
     bgColor !== "white" &&

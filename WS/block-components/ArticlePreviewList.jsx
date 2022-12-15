@@ -1,6 +1,6 @@
 import React from "react";
-import Heading from "../block-components/Typography/Heading";
-import Text from "../block-components/Typography/Text";
+import Heading from "../components/Typography/Heading";
+import Text from "../components/Typography/Text";
 import Link from "next/link";
 
 const ArticlePreviewList = ({ blok }) => {

@@ -1,12 +1,12 @@
 import React from "react";
-import IconWithText from "../block-components/IconWithText";
-import Heading from "../block-components/Typography/Heading";
-import Preamble from "../block-components/Typography/Preamble";
-import Text from "../block-components/Typography/Text";
+import IconWithText from "../components/IconWithText";
+import Heading from "../components/Typography/Heading";
+import Preamble from "../components/Typography/Preamble";
+import Text from "../components/Typography/Text";
 
 const ImageTextSideBySide = ({ blok }) => {
   const avatar = blok?.image?.[0];
-  const bgColor = blok?.body?.[0]?.background_color;
+  const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
     bgColor !== "white" &&

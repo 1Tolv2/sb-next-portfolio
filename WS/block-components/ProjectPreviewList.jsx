@@ -1,6 +1,6 @@
-import Heading from "../block-components/Typography/Heading";
-import Text from "../block-components/Typography/Text";
-import AccentLine from "../block-components/AccentLine";
+import Heading from "../components/Typography/Heading";
+import Text from "../components/Typography/Text";
+import AccentLine from "../components/AccentLine";
 import Link from "next/link";
 
 const ProjectPreviewList = ({ blok }) => {

@@ -1,12 +1,12 @@
 import React from "react";
-import Heading from "../block-components/Typography/Heading";
-import Preamble from "../block-components/Typography/Preamble";
-import Text from "../block-components/Typography/Text";
+import Heading from "../components/Typography/Heading";
+import Preamble from "../components/Typography/Preamble";
+import Text from "../components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
 import Link from "next/link";
 
 const TitledGrid = ({ blok }) => {
-  const bgColor = blok?.body?.find(
+  const bgColor = blok?.block_config?.find(
     (item) => item.component === "section-config"
   )?.background_color;
   const isBgColorDark =
@@ -25,13 +25,9 @@ const TitledGrid = ({ blok }) => {
         <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
       </div>
       <div className="flex grow justify-center flex-col ">
-        {blok?.body?.map((nestedBlok) => {
-          return (
-            nestedBlok.component !== "section-config" && (
-              <StoryblokComponent blok={nestedBlok} />
-            )
-          );
-        })}
+        {blok?.body?.map((nestedBlok) => (
+          <StoryblokComponent blok={nestedBlok} />
+        ))}
       </div>
       {blok?.link_text && (
         <div className="self-end mt-10 mr-14">

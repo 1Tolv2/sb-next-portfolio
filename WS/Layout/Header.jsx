@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Text from "../block-components/Typography/Text";
+import Text from "../components/Typography/Text";
 import ReturnHeader from "./ReturnHeader";
 
 const Header = ({ config, story }) => {
