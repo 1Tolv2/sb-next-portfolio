@@ -9,8 +9,6 @@ const Page = ({ blok }) => {
       className="max-h-screen lg:overflow-y-scroll lg:snap lg:snap-y lg:snap-mandatory"
     >
       {blok.body.map((nestedBlok) => {
-        console.log("BLOK", nestedBlok?.block_config?.[0]);
-
         return (
           <Section
             pageType={blok?.component}

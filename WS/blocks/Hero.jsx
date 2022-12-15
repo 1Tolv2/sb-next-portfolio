@@ -3,9 +3,9 @@ import AccentLine from "../components/AccentLine";
 import Button from "../components/Button/Button";
 import Heading from "../components/Typography/Heading";
 import Text from "../components/Typography/Text";
+import { StoryblokComponent } from "@storyblok/react";
 
 const Hero = ({ blok }) => {
-  // console.log("HERO", blok?.image?.[0]);
   const avatar = blok?.image?.[0];
   const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
@@ -37,20 +37,9 @@ const Hero = ({ blok }) => {
           <Text isBackgroundDark={isBgColorDark}>{blok?.email?.email}</Text>
         </div>
       </div>
-      <div className="relative lg:bottom-16 flex md:justify-center self-center w-full h-96 lg:max-w-3xl lg:h-100 truncate">
-        <div className="avatar_bg relative left-0 lg:top-32 flex justify-center items-center bg-secondary-main">
-          <div
-            className={`h-fit w-fit absolute lg:${
-              (avatar?.y_axis > 0 ? "top-" : "bottom") + avatar?.y_axis
-            } lg:${(avatar?.x_axis > 0 ? "right-" : "left") + avatar?.x_axis}`}
-          >
-            <img
-              src={avatar?.image_file?.filename}
-              alt={avatar?.image_file?.alt}
-            />
-          </div>
-        </div>
-      </div>
+      {blok?.image?.map((nestedBlok) => {
+        return <StoryblokComponent blok={nestedBlok} />;
+      })}
     </>
   );
 };
