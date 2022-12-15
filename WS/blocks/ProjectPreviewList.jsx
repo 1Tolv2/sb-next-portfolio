@@ -1,6 +1,4 @@
-import React from "react";
 import Heading from "../block-components/Typography/Heading";
-import Preamble from "../block-components/Typography/Preamble";
 import Text from "../block-components/Typography/Text";
 import AccentLine from "../block-components/AccentLine";
 import Link from "next/link";
