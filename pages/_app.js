@@ -7,7 +7,6 @@ import NavigationLink from "../WS/block-components/NavigationLink";
 import ProjectPreviewList from "../WS/blocks/ProjectPreviewList";
 import TitledGrid from "../WS/blocks/TitledGrid";
 import Page from "../WS/blocks/Page";
-import SingleContent from "../WS/blocks/SingleContent";
 
 const components = {
   "article-preview-list": ArticlePreviewList,
@@ -17,7 +16,6 @@ const components = {
   page: Page,
   "project-preview-list": ProjectPreviewList,
   "titled-grid": TitledGrid,
-  "single-content": SingleContent,
   "sub-page": Page,
 };
 

@@ -67,7 +67,7 @@ export async function getStaticProps({ params }) {
   if (
     (slug === "projects" || slug === "articles") &&
     data?.story?.content?.body
-      ?.find((item) => item?.component === "single-content")
+      ?.find((item) => item?.component === "titled-grid")
       ?.body?.find(
         (item) =>
           item?.component === `${slug.substr(0, slug.length - 1)}-preview-list`
@@ -75,7 +75,7 @@ export async function getStaticProps({ params }) {
   ) {
     const contentData = await getContentData(slug);
     data.story.content.body
-      .find((item) => item.component === "single-content")
+      .find((item) => item.component === "titled-grid")
       .body.find(
         (item) =>
           item.component === `${slug.substr(0, slug.length - 1)}-preview-list`
