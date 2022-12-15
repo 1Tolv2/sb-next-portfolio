@@ -1,10 +1,9 @@
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import "../styles/globals.css";
-import ArticlePreviewList from "../WS/blocks/ArticlePreviewList";
+import ArticlePreviewList from "../WS/block-components/ArticlePreviewList";
 import Hero from "../WS/blocks/Hero";
 import ImageTextSideBySide from "../WS/blocks/ImageTextSideBySide";
-import NavigationLink from "../WS/block-components/NavigationLink";
-import ProjectPreviewList from "../WS/blocks/ProjectPreviewList";
+import ProjectPreviewList from "../WS/block-components/ProjectPreviewList";
 import TitledGrid from "../WS/blocks/TitledGrid";
 import Page from "../WS/blocks/Page";
 
@@ -12,7 +11,6 @@ const components = {
   "article-preview-list": ArticlePreviewList,
   hero: Hero,
   "image-text-side-by-side": ImageTextSideBySide,
-  "navigation-link": NavigationLink,
   page: Page,
   "project-preview-list": ProjectPreviewList,
   "titled-grid": TitledGrid,
