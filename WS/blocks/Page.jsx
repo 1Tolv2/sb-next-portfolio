@@ -8,6 +8,7 @@ const Page = ({ blok }) => {
       {blok.body.map((nestedBlok) => {
         return (
           <Section
+            pageType={blok?.component}
             blok={{
               ...nestedBlok?.body?.find(
                 (item) => item.component === "section-config"

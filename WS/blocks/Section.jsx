@@ -1,11 +1,13 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
 
-const Section = ({ blok, children }) => {
+const Section = ({ blok, children, pageType }) => {
   return (
     <div
       id={blok?.section_name_id}
-      className={`-scroll-mt-1 bg-${blok?.background_color}`}
+      className={`${
+        pageType === "sub-page" && "pt-10 md:pt-20"
+      } -scroll-mt-1 bg-${blok?.background_color}`}
     >
       <div
         className={`max-w-[1920px] mx-auto w-screen min-h-screen py-10 px-4 md:px-10 lg:p-32 flex flex-col-reverse md:flex-row justify-center ${
