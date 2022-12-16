@@ -1,18 +1,30 @@
+import { useState, createContext } from "react";
 import {
   getStoryblokApi,
   useStoryblokState,
   StoryblokComponent,
 } from "@storyblok/react";
 import Layout from "../WS/Layout";
+import CoverModal from "../WS/components/CoverModal";
+
+const ModalContext = createContext();
 
 export default function Page({ story, configData }) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   story = useStoryblokState(story);
+  console.log("CONFIG", configData?.content);
+
   return (
-    <Layout story={story} configData={configData}>
-      <StoryblokComponent blok={story.content} />
-    </Layout>
+    <ModalContext.Provider value={{ isModalVisible, setIsModalVisible }}>
+      <Layout story={story} configData={configData}>
+        {isModalVisible && <CoverModal blok={null} />}
+        <StoryblokComponent blok={story.content} />
+      </Layout>
+    </ModalContext.Provider>
   );
 }
+
+export { ModalContext };
 
 export async function getStaticPaths() {
   const storyblokApi = getStoryblokApi();
