@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import AccentLine from "../components/AccentLine";
 import Button from "../components/Button/Button";
 import Heading from "../components/Typography/Heading";
 import Text from "../components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
+import { ModalContext } from "../../pages/[[...slug]]";
 
 const Hero = ({ blok }) => {
+  const { setIsModalVisible } = useContext(ModalContext);
+
   const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
@@ -27,7 +30,7 @@ const Hero = ({ blok }) => {
         </div>
         <div className="flex w-full justify-evenly md:justify-start md:flex-col lg:flex-row lg:my-4 items-center">
           <div className="lg:mr-28 my-4 lg:mb-auto ">
-            <Button>
+            <Button event={() => setIsModalVisible(true)}>
               <Text type="emphasize" isBackgroundDark={true}>
                 View CV
               </Text>
