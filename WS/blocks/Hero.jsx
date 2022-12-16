@@ -6,7 +6,6 @@ import Text from "../components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
 
 const Hero = ({ blok }) => {
-  const avatar = blok?.image?.[0];
   const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
