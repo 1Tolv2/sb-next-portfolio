@@ -30,18 +30,19 @@ const TitledGrid = ({ blok }) => {
         ))}
       </div>
       {blok?.link_text && (
-        <div className="self-end mt-10 mr-14">
+        <div className="relative z-10 self-end mt-10 mr-14">
           <Link href={blok?.page_link?.cached_url || "/"}>
             <Text type="emphasizeBig" isBackgroundDark={isBgColorDark}>
               {blok?.link_text}
             </Text>
-          </Link>
-          <span
-            className={`h-2 w-12 ml-24
+
+            <span
+              className={`h-2 w-12 ml-24
            text-${isBgColorDark ? "neutral" : "primary-light"}`}
-          >
-            {"-------------------------------------------------->"}
-          </span>
+            >
+              {"-------------------------------------------------->"}
+            </span>
+          </Link>
         </div>
       )}
     </div>
