@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const ProjectPreviewList = ({ blok }) => {
   return (
-    <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-5 items-end">
+    <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-14 items-end">
       {blok?.projects?.map((project) => {
         const nestedBlok = project?.content;
         return (

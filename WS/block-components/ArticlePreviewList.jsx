@@ -6,7 +6,7 @@ import Link from "next/link";
 const ArticlePreviewList = ({ blok }) => {
   const arrayOfThree = ["", "", ""];
   return (
-    <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-24 items-end">
+    <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-14 items-end">
       {arrayOfThree.map((article) => {
         return (
           <div className="relative h-fit w-full lg:mt-20">
