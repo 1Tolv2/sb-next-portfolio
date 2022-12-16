@@ -10,14 +10,13 @@ import CoverModal from "../WS/components/CoverModal";
 const ModalContext = createContext();
 
 export default function Page({ story, configData }) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(true);
   story = useStoryblokState(story);
-  console.log("CONFIG", configData?.content);
 
   return (
     <ModalContext.Provider value={{ isModalVisible, setIsModalVisible }}>
       <Layout story={story} configData={configData}>
-        {isModalVisible && <CoverModal blok={null} />}
+        {isModalVisible && <CoverModal blok={configData?.content?.modal} />}
         <StoryblokComponent blok={story.content} />
       </Layout>
     </ModalContext.Provider>
