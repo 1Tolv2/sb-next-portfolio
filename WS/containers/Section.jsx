@@ -1,11 +1,11 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
 
-const Section = ({ blok, children, pageType }) => {
+const Section = ({ blok, children, pageType, isFirstSection }) => {
   return (
     <div
       id={blok?.section_name_id}
-      className={`lg:snap-center ${
+      className={`${isFirstSection ? "lg:snap-start" : "lg:snap-center"} ${
         pageType === "sub-page" && "pt-10 md:pt-20"
       } -scroll-mt-1 bg-${blok?.background_color}`}
     >

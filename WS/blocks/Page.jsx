@@ -8,9 +8,10 @@ const Page = ({ blok }) => {
       {...storyblokEditable(blok)}
       className="max-h-screen lg:overflow-y-scroll lg:snap lg:snap-y lg:snap-mandatory"
     >
-      {blok.body.map((nestedBlok) => {
+      {blok.body.map((nestedBlok, index) => {
         return (
           <Section
+            isFirstSection={index === 0}
             pageType={blok?.component}
             blok={{
               ...nestedBlok?.block_config?.[0],
