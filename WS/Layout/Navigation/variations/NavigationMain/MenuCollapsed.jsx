@@ -17,7 +17,11 @@ const MenuCollapsed = ({ config }) => {
           <ul className="flex flex-col justify-center items-center sm:block absolute h-screen w-screen sm:w-fit z-10 top-0 pt-32 left-0 bg-primary-light pl-4 pr-14 py-3">
             {config?.content?.navigation_left?.map((item) => {
               return (
-                <li key={item._uid} className="mb-12 sm:mb-3">
+                <li
+                  onClick={() => setIsMenuOpen(false)}
+                  key={item._uid}
+                  className="mb-12 sm:mb-3"
+                >
                   <NavItem data={item} isBackgroundDark={true} />
                 </li>
               );
