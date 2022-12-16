@@ -79,7 +79,6 @@ export async function getStaticProps({ params }) {
     });
     return data;
   }
-
   if (
     (slug === "projects" || slug === "articles") &&
     data?.story?.content?.body
@@ -87,7 +86,7 @@ export async function getStaticProps({ params }) {
       ?.body?.find(
         (item) =>
           item?.component === `${slug.substr(0, slug.length - 1)}-preview-list`
-      )?.projects?.length === 0
+      )?.[slug]?.length === 0
   ) {
     const contentData = await getContentData(slug);
     data.story.content.body
@@ -95,7 +94,7 @@ export async function getStaticProps({ params }) {
       .body.find(
         (item) =>
           item.component === `${slug.substr(0, slug.length - 1)}-preview-list`
-      ).projects = contentData ? contentData?.stories : [];
+      )[slug] = contentData ? contentData?.stories : [];
   }
   return {
     props: {
