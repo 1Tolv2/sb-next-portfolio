@@ -28,15 +28,12 @@ const Hero = ({ blok }) => {
             {blok?.preamble}
           </Heading>
         </div>
-        <div className="flex w-full justify-evenly md:justify-start md:flex-col lg:flex-row lg:my-4 items-center">
-          <div className="lg:mr-28 my-4 lg:mb-auto ">
-            <Button event={() => setIsModalVisible(true)}>
-              <Text type="emphasize" isBackgroundDark={true}>
-                View CV
-              </Text>
-            </Button>
-          </div>
-          <Text isBackgroundDark={isBgColorDark}>{blok?.email?.email}</Text>
+        <div className="flex w-full justify-center sm:justify-start md:flex-col lg:flex-row my-4 lg:mb-auto  ">
+          <Button event={() => setIsModalVisible(true)}>
+            <Text type="emphasize" isBackgroundDark={true}>
+              View CV
+            </Text>
+          </Button>
         </div>
       </div>
       {blok?.image?.map((nestedBlok) => {
