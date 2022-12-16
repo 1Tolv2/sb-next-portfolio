@@ -44,8 +44,12 @@ const Texts = {
     </p>
   ),
 };
+const firstCharacterUpperCase = (string) => {
+  return string[0].toUpperCase() + string.substring(1);
+};
 
-const Text = ({ type, children, center, isBackgroundDark }) => {
+const Text = ({ type, children, center, isBackgroundDark, capitalized }) => {
+  children = capitalized ? firstCharacterUpperCase(children) : children;
   return type
     ? Texts[type](children, center, isBackgroundDark)
     : Texts.body(children, center);
