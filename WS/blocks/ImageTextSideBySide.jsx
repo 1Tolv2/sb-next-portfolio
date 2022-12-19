@@ -31,9 +31,9 @@ const ImageTextSideBySide = ({ blok }) => {
               My Skills:
             </Heading>
             <ul className="grid grid-cols-3 xl:grid-cols-4 gap-2 md:mt-4">
-              {blok?.skills?.map((skill) => {
+              {blok?.skills?.map((skill, index) => {
                 return (
-                  <li>
+                  <li key={index + skill}>
                     <IconWithText icon={skill} />
                   </li>
                 );
@@ -43,7 +43,7 @@ const ImageTextSideBySide = ({ blok }) => {
         </div>
       </div>
       {blok?.image?.map((nestedBlok) => {
-        return <StoryblokComponent blok={nestedBlok} />;
+        return <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />;
       })}
     </div>
   );

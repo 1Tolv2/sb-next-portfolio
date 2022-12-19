@@ -9,7 +9,7 @@ const ProjectPreviewList = ({ blok }) => {
       {blok?.projects?.map((project) => {
         const nestedBlok = project?.content;
         return (
-          <div className="h-fit w-full">
+          <div className="h-fit w-full" key={project.id}>
             <div>
               <Heading type="h3">{nestedBlok?.title}</Heading>
             </div>
@@ -19,12 +19,15 @@ const ProjectPreviewList = ({ blok }) => {
               <div className="flex flex-wrap items-center">
                 {project?.tag_list?.map((tag, index) => {
                   return (
-                    <>
+                    <div
+                      className="flex flex-wrap items-center"
+                      key={index + 40}
+                    >
                       <Text type="tags">{tag}</Text>
                       {index !== project?.tag_list?.length - 1 && (
                         <span className="w-2 h-2 mx-2 md:mx-3 bg-secondary-main rounded-full" />
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div>

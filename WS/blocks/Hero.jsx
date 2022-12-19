@@ -37,7 +37,7 @@ const Hero = ({ blok }) => {
         </div>
       </div>
       {blok?.image?.map((nestedBlok) => {
-        return <StoryblokComponent blok={nestedBlok} />;
+        return <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />;
       })}
     </>
   );

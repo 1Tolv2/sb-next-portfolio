@@ -4,13 +4,12 @@ import Text from "../components/Typography/Text";
 import Link from "next/link";
 
 const ArticlePreviewList = ({ blok }) => {
-  console.log("BLOK", blok);
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-14 items-end">
       {blok?.articles?.map((article) => {
         const { content } = article;
         return (
-          <div className="relative h-fit w-full lg:mt-20">
+          <div className="relative h-fit w-full lg:mt-20" key={article.uuid}>
             <div>
               <img
                 className="w-full"

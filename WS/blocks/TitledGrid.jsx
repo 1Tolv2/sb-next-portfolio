@@ -26,7 +26,7 @@ const TitledGrid = ({ blok }) => {
       </div>
       <div className="flex grow justify-center flex-col ">
         {blok?.body?.map((nestedBlok) => (
-          <StoryblokComponent blok={nestedBlok} />
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
       </div>
       {blok?.link_text && (
