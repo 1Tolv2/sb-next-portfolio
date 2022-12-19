@@ -43,6 +43,8 @@ export async function getStaticPaths() {
       return;
     } else if (links[linkKey].slug === "home") {
       paths.push({ params: { slug: [""] } });
+    } else if (/^projects\/(.+)/.test(links[linkKey].slug)) {
+      return;
     } else {
       const slug = links[linkKey].slug;
       let splittedSlug = slug.split("/");
