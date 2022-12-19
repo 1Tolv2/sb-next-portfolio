@@ -9,8 +9,9 @@ import ArticlePreviewList from "../WS/block-components/ArticlePreviewList";
 import ProjectPreviewList from "../WS/block-components/ProjectPreviewList";
 import Avatar from "../WS/block-components/Avatar";
 import ImageWithBackground from "../WS/block-components/ImageWithBackground";
-import Cv from "../WS/block-components/cv";
 import PersonalLetter from "../WS/block-components/PersonalLetter";
+import CvItem from "../WS/block-components/CvItem";
+import CvTab from "../WS/block-components/CvTab";
 
 const components = {
   "article-preview-list": ArticlePreviewList,
@@ -22,8 +23,9 @@ const components = {
   "sub-page": Page,
   avatar: Avatar,
   "image-with-background": ImageWithBackground,
-  cv: Cv,
+  cv: CvTab,
   "personal-letter": PersonalLetter,
+  "cv-item": CvItem,
 };
 
 storyblokInit({
