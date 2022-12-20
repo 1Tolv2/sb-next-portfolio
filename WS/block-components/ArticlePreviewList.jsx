@@ -23,7 +23,7 @@ const ArticlePreviewList = ({ blok }) => {
               <div className="flex my-3 ">
                 <Link
                   className="flex items-center h-fit ml-1 mt-5"
-                  href={article?.full_slug}
+                  href={article?.full_slug || ""}
                 >
                   <Text type="emphasize">{blok?.link_text}</Text>
                   <img
