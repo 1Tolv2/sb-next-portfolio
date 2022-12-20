@@ -8,6 +8,10 @@ const MenuCollapsed = ({ config }) => {
     <div className="-ml-2 md:hidden self-end">
       {isMenuOpen ? (
         <div>
+          <div
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-0 left -0 w-screen h-screen backdrop-blur bg-transparent"
+          />
           <span
             onClick={() => setIsMenuOpen(false)}
             className="relative z-20 text-neutral"
