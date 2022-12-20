@@ -6,7 +6,7 @@ const Page = ({ blok }) => {
   return (
     <div
       {...storyblokEditable(blok)}
-      className="max-h-screen lg:overflow-y-scroll lg:snap lg:snap-y lg:snap-mandatory"
+      className="max-h-screen lg:overflow-y-scroll lg:snap lg:snap-y lg:snap-mandatory print:hidden"
     >
       {blok.body.map((nestedBlok, index) => {
         return (
