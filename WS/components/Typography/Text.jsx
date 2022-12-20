@@ -7,7 +7,7 @@ const Texts = {
     <p
       className={`${defaultClasses} my-4 text-${align} text-sm xl:text-xl text-${
         isBackgroundDark ? "neutral" : "black"
-      } print:my-1`}
+      } print:mt-1 print:my-3`}
     >
       {children}
     </p>

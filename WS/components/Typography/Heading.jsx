@@ -23,7 +23,7 @@ const Headings = {
     <h3
       className={`font-sans font-medium my-4 text-xl md:text-2xl lg:text-2xl xl:text-4xl text-${
         isBackgroundDark ? "neutral" : "black"
-      } print:my-1 print:mb-2`}
+      } print:my-1 print:mb-1`}
     >
       {children}
     </h3>
@@ -32,7 +32,7 @@ const Headings = {
     <h4
       className={`font-sans font-bold  my-2 text-md md:text-xl lg:text-xl xl:text-2xl text-${
         isBackgroundDark ? "neutral" : "primary-main"
-      }`}
+      } print:mb-0`}
     >
       {children}
     </h4>

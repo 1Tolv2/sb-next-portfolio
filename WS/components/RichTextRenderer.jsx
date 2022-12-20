@@ -19,9 +19,13 @@ const RichTextRenderer = ({ content }) => {
       ),
       [NODE_PARAGRAPH]: (children) => <Text>{children}</Text>,
       [NODE_BR]: () => <br />,
-      [NODE_UL]: (children) => <ul className="list-disc ml-5">{children}</ul>,
+      [NODE_UL]: (children) => (
+        <ul className="list-disc ml-5 my-3">{children}</ul>
+      ),
       [NODE_LI]: (children) => (
-        <li className="-py-10 print:-py-20">{children}</li>
+        <li style={{}} className="-my-2">
+          {children}
+        </li>
       ),
     },
   };

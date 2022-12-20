@@ -32,14 +32,14 @@ const CvItem = ({ blok }) => {
   };
   return (
     <>
-      <div className="flex flex-cols justify-between items-center w-full mb-4 print:mb-2">
+      <div className="flex flex-cols justify-between items-center w-full mb-4 print:mb-0">
         <div className="w-auto md:w-3/4">
           <Heading type="h4">{`${blok?.title}, ${blok?.company}`}</Heading>
           <div className="pl-4 sm:pl-14">
-            <RichTextRenderer content={blok?.description}></RichTextRenderer>
+            <RichTextRenderer content={blok?.description} />
             {blok?.tools?.length > 0 && (
               <Text>
-                <span className="font-bold">Tools:</span>{" "}
+                <span className="font-bold">{"Tools:  "}</span>
                 {blok?.tools?.map(
                   (tool, index) =>
                     tool + (index === blok.tools.length - 1 ? "" : ", ")
