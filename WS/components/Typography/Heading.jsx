@@ -30,8 +30,8 @@ const Headings = {
   ),
   h4: (children, isBackgroundDark) => (
     <h4
-      className={`font-sans font-medium  my-2 text-md md:text-xl lg:text-xl xl:text-2xl text-${
-        isBackgroundDark ? "neutral" : "black"
+      className={`font-sans font-bold  my-2 text-md md:text-xl lg:text-xl xl:text-2xl text-${
+        isBackgroundDark ? "neutral" : "primary-main"
       }`}
     >
       {children}
