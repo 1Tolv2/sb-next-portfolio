@@ -4,7 +4,7 @@ import Text from "../../components/Typography/Text";
 
 const NavItem = ({ data, isBackgroundDark }) => {
   return data?.link?.anchor !== "" ? (
-    <Link href={"#" + data.text || "/"}>
+    <Link href={"#" + data?.text || "/"}>
       <Text isBackgroundDark={isBackgroundDark} type="emphasizeBig">
         <span
           className={`text-${
@@ -17,7 +17,7 @@ const NavItem = ({ data, isBackgroundDark }) => {
       </Text>
     </Link>
   ) : (
-    <Link href={data.text || "/"}>
+    <Link href={data?.text || "/"}>
       <Text isBackgroundDark={isBackgroundDark} type="emphasizeBig">
         {data.text}
       </Text>
