@@ -16,7 +16,7 @@ const Texts = {
     <p
       className={`${defaultClasses} text-${
         center ? "center" : "left"
-      } text-base lg:text-xl text-${isBackgroundDark ? "neutral" : "black"}`}
+      } text-sm xl:text-xl text-${isBackgroundDark ? "neutral" : "black"}`}
     >
       {children}
     </p>
