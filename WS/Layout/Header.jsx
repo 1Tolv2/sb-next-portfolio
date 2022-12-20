@@ -9,7 +9,7 @@ const Header = ({ config, story }) => {
       <ul className="flex justify-end w-full md:w-fit">
         {config?.content?.navigation_right?.map((item) => {
           return (
-            <li key={item._uid} className="sm:mr-5 md:mr-14 w-fit">
+            <li key={item._uid} className="sm:mr-5 lg:mr-14 w-fit">
               <Link className="flex items-center" href={item?.link?.url || "/"}>
                 {item.icon !== "" && (
                   <img className="w-12 mr-3" src={item?.icon?.filename} />
