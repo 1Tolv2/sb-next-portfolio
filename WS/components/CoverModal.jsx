@@ -8,6 +8,13 @@ const CoverModal = ({ blok, closeModal }) => {
   return (
     <div className="fixed z-[100] top-0 left-0 w-screen h-screen">
       <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-full w-[calc(100vw-20px)] lg:w-[calc(100vw-100px)] bg-white pt-10 pb-32">
+        <div
+          className="absolute right-7 top-5 md:top-3 md:right-6 lg:top-5 lg:right-5"
+          onClick={closeModal}
+        >
+          <div className="absolute w-1 h-5 bg-accent-main rotate-45 lg:h-8" />
+          <div className="absolute w-1 h-5 bg-accent-main -rotate-45 lg:h-8" />
+        </div>
         <div className="flex justify-between px-4 lg:p-24 lg:pb-0">
           <ul className="flex print:hidden">
             {blok?.map((item) => {
