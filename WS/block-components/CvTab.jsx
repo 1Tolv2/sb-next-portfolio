@@ -68,7 +68,6 @@ const renderSideContent = (title, blok) => {
 };
 
 const CvTab = ({ blok, contactInfo }) => {
-  console.log("BLOK", blok);
   return (
     <div className="flex flex-wrap flex-col-reverse md:flex-row print:p-0 print:w-full print:flex-row print:flex-wrap">
       <div className="flex flex-wrap md:block w-full md:w-1/4 text-center print:gap-0 print:w-1/4 print:flex-wrap print:block">

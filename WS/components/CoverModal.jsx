@@ -5,7 +5,6 @@ import Text from "./Typography/Text";
 
 const CoverModal = ({ blok, closeModal }) => {
   const [activeTab, setActiveTab] = useState("cv");
-  console.log("MDOAL", blok);
   return (
     <div className="fixed z-[100] top-0 left-0 w-screen h-screen">
       <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-full w-[calc(100vw-20px)] lg:w-[calc(100vw-100px)] bg-white pt-10 pb-32">
