@@ -2,11 +2,10 @@ import React from "react";
 import IconWithText from "../components/IconWithText";
 import Heading from "../components/Typography/Heading";
 import Preamble from "../components/Typography/Preamble";
-import Text from "../components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
+import RichTextRenderer from "../components/RichTextRenderer";
 
 const ImageTextSideBySide = ({ blok }) => {
-  const avatar = blok?.image?.[0];
   const bgColor = blok?.block_config?.[0]?.background_color;
   const isBgColorDark =
     bgColor !== "neutral" &&
@@ -24,8 +23,7 @@ const ImageTextSideBySide = ({ blok }) => {
           <Heading type="h2" isBackgroundDark={isBgColorDark}>
             {blok?.title}
           </Heading>
-
-          <Text isBackgroundDark={isBgColorDark}>{blok?.text}</Text>
+          <RichTextRenderer content={blok?.text} />
           <div className="w-full mt-5 md:mt-10">
             <Heading type="h3" isBackgroundDark={isBgColorDark}>
               My Skills:
@@ -34,7 +32,9 @@ const ImageTextSideBySide = ({ blok }) => {
               {blok?.skills?.map((skill, index) => {
                 return (
                   <li key={index + skill}>
-                    <IconWithText icon={skill} />
+                    <IconWithText icon={skill?.icon?.filename}>
+                      {skill?.text}
+                    </IconWithText>
                   </li>
                 );
               })}
