@@ -42,7 +42,7 @@ module.exports = {
         /(bg|text|fill)-(primary-main|primary-light|secondary-main|secondary-dark|accent-dark|accent-main|black|white|neutral)/,
     },
     { pattern: /w-\d/ },
-    "text-center",
+    { pattern: /text-(center|left|right)/ },
     "md:flex-row-reverse",
     "md:flex-row",
   ],
