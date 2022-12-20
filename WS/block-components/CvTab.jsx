@@ -3,6 +3,7 @@ import Heading from "../components/Typography/Heading";
 import Text from "../components/Typography/Text";
 import { StoryblokComponent } from "@storyblok/react";
 import RichTextRenderer from "../components/RichTextRenderer";
+import ModalContactInfo from "../components/ModalContactInfo";
 
 const renderMainContent = (title, content) => {
   return (
@@ -18,35 +19,6 @@ const renderMainContent = (title, content) => {
           return (
             <li key={nestedBlok._uid}>
               <StoryblokComponent blok={nestedBlok} />
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-};
-
-const renderContactInfo = (title, blok, hidden) => {
-  return (
-    <div
-      className={`${
-        hidden ? "md:hidden print:hidden" : "hidden md:block print:block"
-      } w-full md:w-auto print:w-full print:h-min mb-10`}
-    >
-      <Heading type="h4">{title}</Heading>
-
-      <ul className="text-left">
-        {blok?.map((item, index) => {
-          const text = typeof item === "string" ? item : item?.text;
-          return (
-            <li key={item?._uid || index} className="flex items-center">
-              {title === "Contact" && (
-                <img
-                  className="w-4 mr-2 self-start"
-                  src={item?.icon?.filename}
-                />
-              )}
-              <Text type="emphasize">{text}</Text>
             </li>
           );
         })}
@@ -78,7 +50,7 @@ const CvTab = ({ blok, contactInfo }) => {
             alt="profile image"
           />
         </div>
-        {renderContactInfo(contactInfo?.title, contactInfo?.body, false)}
+        <ModalContactInfo blok={contactInfo?.body} hidden={false} />
         {renderSideContent("Skills", blok?.skills)}
         {renderSideContent("Languages", blok?.languages)}
       </div>
@@ -89,8 +61,7 @@ const CvTab = ({ blok, contactInfo }) => {
             {blok?.role}
           </Text>
         </div>
-        {renderContactInfo(contactInfo?.title, contactInfo?.body, true)}
-
+        <ModalContactInfo blok={contactInfo?.body} hidden={true} />
         {renderMainContent("Work Experience", blok?.experience)}
         {renderMainContent("Education", blok?.education)}
       </div>
