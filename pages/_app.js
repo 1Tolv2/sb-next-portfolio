@@ -12,12 +12,14 @@ import ImageWithBackground from "../WS/block-components/ImageWithBackground";
 import PersonalLetter from "../WS/block-components/PersonalLetter";
 import CvItem from "../WS/block-components/CvItem";
 import CvTab from "../WS/block-components/CvTab";
+import Article from "../WS/blocks/Article";
 
 const components = {
   "article-preview-list": ArticlePreviewList,
   hero: Hero,
   "image-text-side-by-side": ImageTextSideBySide,
   page: Page,
+  article: Article,
   "project-preview-list": ProjectPreviewList,
   "titled-grid": TitledGrid,
   "sub-page": Page,
