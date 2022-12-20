@@ -25,51 +25,73 @@ const renderMainContent = (title, content) => {
     </div>
   );
 };
-const renderSideContent = (title, blok) => {
+
+const renderContactInfo = (title, blok, hidden) => {
   return (
-    <div className="w-1/3 md:w-auto print:w-full print:h-min">
+    <div
+      className={`${
+        hidden ? "md:hidden print:hidden" : "hidden md:block print:block"
+      } w-full md:w-auto print:w-full print:h-min mb-10`}
+    >
       <Heading type="h4">{title}</Heading>
-      {blok.content ? (
-        <RichTextRenderer content={blok} />
-      ) : (
-        <ul className="text-left">
-          {blok?.map((item, index) => {
-            const text = typeof item === "string" ? item : item?.text;
-            return (
-              <li key={item?._uid || index}>
-                {title === "Contact" && <img src="" />}
-                <Text type="emphasize">{text}</Text>
-              </li>
-            );
-          })}
-        </ul>
-      )}
+
+      <ul className="text-left">
+        {blok?.map((item, index) => {
+          const text = typeof item === "string" ? item : item?.text;
+          return (
+            <li key={item?._uid || index} className="flex items-center">
+              {title === "Contact" && (
+                <img
+                  className="w-4 mr-2 self-start"
+                  src={item?.icon?.filename}
+                />
+              )}
+              <Text type="emphasize">{text}</Text>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
-const CvTab = ({ blok }) => {
+
+const renderSideContent = (title, blok) => {
+  return (
+    <div
+      className="w-2/4
+       md:w-auto print:w-full print:h-min mb-10"
+    >
+      <Heading type="h4">{title}</Heading>
+      <RichTextRenderer content={blok} />
+    </div>
+  );
+};
+
+const CvTab = ({ blok, contactInfo }) => {
   console.log("BLOK", blok);
   return (
     <div className="flex flex-wrap flex-col-reverse md:flex-row print:p-0 print:w-full print:flex-row print:flex-wrap">
-      <div className="flex gap-10 md:block w-full md:w-1/4 text-center print:gap-0 print:w-1/4 print:flex-wrap">
-        <div className="max-h-[calc(401px-20px)] w-[calc(100%-20px)] mb-[20px] overflow-clip">
+      <div className="flex flex-wrap md:block w-full md:w-1/4 text-center print:gap-0 print:w-1/4 print:flex-wrap print:block">
+        <div className="hidden md:flex print:justify-center justify-center items-center max-h-[calc(401px-20px)] w-[calc(100%-20px)] mb-[20px] overflow-clip print:block print:overflow-clip">
           <img
             className="h-auto w-full"
             src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             alt="profile image"
           />
         </div>
-        {renderSideContent("Contact", blok?.contact)}
+        {renderContactInfo(contactInfo?.title, contactInfo?.body, false)}
         {renderSideContent("Skills", blok?.skills)}
         {renderSideContent("Languages", blok?.languages)}
       </div>
-      <div className="w-full md:w-3/4 pl-8 print:pl-4 print:w-3/4">
+      <div className="w-full md:w-3/4 pl-0 md:pl-8 print:pl-4 print:w-3/4">
         <div className="text-center">
           <Heading>{blok?.name}</Heading>
-          <Text center type="emphasizeBig">
+          <Text align="center" type="emphasizeBig">
             {blok?.role}
           </Text>
         </div>
+        {renderContactInfo(contactInfo?.title, contactInfo?.body, true)}
+
         {renderMainContent("Work Experience", blok?.experience)}
         {renderMainContent("Education", blok?.education)}
       </div>
