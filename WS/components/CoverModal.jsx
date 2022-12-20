@@ -37,7 +37,7 @@ const CoverModal = ({ blok, closeModal }) => {
         <div className=" py-5 max-w-[1920px] overflow-y-scroll h-full px-4 lg:p-24 lg:pt-10">
           <StoryblokComponent
             contactInfo={blok?.find(
-              (nestedBlok) => nestedBlok.component === "contact_info"
+              (nestedBlok) => nestedBlok.component === "contact-info"
             )}
             blok={blok?.find(
               (nestedBlok) => nestedBlok.component === activeTab
