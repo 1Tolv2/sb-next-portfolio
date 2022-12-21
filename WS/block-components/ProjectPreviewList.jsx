@@ -7,9 +7,9 @@ const ProjectPreviewList = ({ blok }) => {
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mx-auto gap-14 items-end">
       {blok?.projects?.map((project) => {
         return project?.content?.platform === "mobile" ? (
-          <ProjectMobileCard story={project} />
+          <ProjectMobileCard story={project} key={project?.uuid} />
         ) : (
-          <ProjectDesktopCard story={project} />
+          <ProjectDesktopCard story={project} key={project?.uuid} />
         );
       })}
     </div>
