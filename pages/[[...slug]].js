@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import Head from "next/head";
 import {
   getStoryblokApi,
   useStoryblokState,
@@ -14,17 +15,27 @@ export default function Page({ story, configData }) {
   story = useStoryblokState(story);
 
   return (
-    <ModalContext.Provider value={{ isModalVisible, setIsModalVisible }}>
-      <Layout story={story} configData={configData}>
-        {isModalVisible && (
-          <CoverModal
-            closeModal={() => setIsModalVisible(false)}
-            blok={configData?.content?.modal}
-          />
-        )}
-        <StoryblokComponent blok={story.content} />
-      </Layout>
-    </ModalContext.Provider>
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta
+          name="description"
+          content="Full stack developer portfolio"
+        ></meta>
+        <title>Sofia Johnsson S.</title>
+      </Head>
+      <ModalContext.Provider value={{ isModalVisible, setIsModalVisible }}>
+        <Layout story={story} configData={configData}>
+          {isModalVisible && (
+            <CoverModal
+              closeModal={() => setIsModalVisible(false)}
+              blok={configData?.content?.modal}
+            />
+          )}
+          <StoryblokComponent blok={story.content} />
+        </Layout>
+      </ModalContext.Provider>
+    </>
   );
 }
 

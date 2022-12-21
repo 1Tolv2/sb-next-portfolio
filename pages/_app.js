@@ -13,6 +13,8 @@ import PersonalLetter from "../WS/block-components/PersonalLetter";
 import CvItem from "../WS/block-components/CvItem";
 import CvTab from "../WS/block-components/CvTab";
 import Article from "../WS/blocks/Article";
+import { Html } from "next/document";
+import Head from "next/head";
 
 const components = {
   "article-preview-list": ArticlePreviewList,
