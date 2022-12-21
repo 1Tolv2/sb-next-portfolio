@@ -10,6 +10,7 @@ const Avatar = ({ blok }) => {
           } lg:${(blok?.x_axis > 0 ? "right-" : "left") + blok?.x_axis}`}
         >
           <img
+            className="max-h-[669px] max-w-[400px]"
             src={blok?.avatar_image?.filename}
             alt={blok?.avatar_image?.alt}
           />
