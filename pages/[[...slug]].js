@@ -71,7 +71,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
   let sbParams = {
-    version: "draft",
+    version: "published",
     resolve_relations: [
       "project-preview-list.projects",
       "article-preview-list.articles",
