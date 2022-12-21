@@ -29,6 +29,7 @@ const ProjectDesktopCard = ({ story }) => {
           <Link
             className="flex items-center h-fit ml-1 mb-1 lg:mb-0"
             href={nestedBlok?.github_link?.url || "/"}
+            aria-label="Go to deployed demo"
           >
             <Text type="emphasize">Go to demo</Text>
             <img
@@ -40,6 +41,7 @@ const ProjectDesktopCard = ({ story }) => {
           <Link
             className="flex justify-end items-center h-fit mr-2"
             href={nestedBlok?.github_link?.url || "/"}
+            aria-label="Go to source code on github"
           >
             <Text type="emphasize">View source code</Text>
             <img

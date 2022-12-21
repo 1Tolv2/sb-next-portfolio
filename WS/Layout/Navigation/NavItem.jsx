@@ -4,7 +4,10 @@ import Text from "../../components/Typography/Text";
 
 const NavItem = ({ data, isBackgroundDark }) => {
   return data?.link?.anchor !== "" ? (
-    <Link href={"#" + data?.text || "/"}>
+    <Link
+      href={"#" + data?.text || "/"}
+      aria-label={`Go to ${data?.text} section`}
+    >
       <Text isBackgroundDark={isBackgroundDark} type="emphasizeBig">
         <span
           className={`text-${
@@ -17,7 +20,7 @@ const NavItem = ({ data, isBackgroundDark }) => {
       </Text>
     </Link>
   ) : (
-    <Link href={data?.text || "/"}>
+    <Link href={data?.text || "/"} aria-label={`Go to ${data?.text} page`}>
       <Text isBackgroundDark={isBackgroundDark} type="emphasizeBig">
         {data.text}
       </Text>

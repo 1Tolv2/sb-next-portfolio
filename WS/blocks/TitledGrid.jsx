@@ -31,7 +31,10 @@ const TitledGrid = ({ blok }) => {
       </div>
       {blok?.link_text && (
         <div className="relative z-10 self-end mt-10 mr-14">
-          <Link href={blok?.page_link?.cached_url || "/"}>
+          <Link
+            href={blok?.page_link?.cached_url || "/"}
+            aria-label={`Go to page to view more ${blok?.preamble}`}
+          >
             <Text type="emphasizeBig" isBackgroundDark={isBgColorDark}>
               {blok?.link_text}
             </Text>

@@ -21,6 +21,7 @@ const renderArticleCard = (article) => {
           <Link
             className="flex items-center h-fit ml-1 mt-5"
             href={article?.full_slug || ""}
+            aria-label={`Read article ${article?.name}`}
           >
             <Text type="emphasize">{content?.link_text}</Text>
             <img

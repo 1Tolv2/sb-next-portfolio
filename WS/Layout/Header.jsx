@@ -10,7 +10,11 @@ const Header = ({ config, story }) => {
         {config?.content?.navigation_right?.map((item) => {
           return (
             <li key={item._uid} className="sm:mr-5 lg:mr-14 w-fit">
-              <Link className="flex items-center" href={item?.link?.url || "/"}>
+              <Link
+                className="flex items-center"
+                href={item?.link?.url || "/"}
+                aria-label={`Navigate to external page`}
+              >
                 {item.icon !== "" && (
                   <img
                     className="w-12 mr-3"

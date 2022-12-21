@@ -7,7 +7,9 @@ const NavigationReturn = ({ config }) => {
     <>
       <div className="flex items-center">
         <span className="text-2xl ml-7">
-          <Link href="/">&#8617;</Link>
+          <Link href="/" aria-label={`Go back to home page`}>
+            &#8617;
+          </Link>
         </span>
         <Logo image={config?.content?.logo?.[0]} />
       </div>

@@ -31,6 +31,7 @@ const ProjectMobileCard = ({ story }) => {
             <Link
               className="flex items-center h-fit mb-1 lg:mb-0"
               href={nestedBlok?.github_link?.url || "/"}
+              aria-label="Go to page source code on github"
             >
               <Text type="emphasize">Go to demo</Text>
               <img
@@ -42,6 +43,7 @@ const ProjectMobileCard = ({ story }) => {
             <Link
               className="flex items-center h-fit w-fit mr-2"
               href={nestedBlok?.github_link?.url || "/"}
+              aria-label="Go to deployed demo"
             >
               <Text type="emphasize">View source code</Text>
               <img
