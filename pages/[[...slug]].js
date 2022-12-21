@@ -70,7 +70,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
-  console.log("ENV", process.env.NODE_ENV);
 
   let sbParams = {
     version: process.env.NODE_ENV === "development" ? "draft" : "published",
