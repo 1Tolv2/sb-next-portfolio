@@ -32,9 +32,15 @@ const components = {
   "cv-item": CvItem,
 };
 
+const shouldUseBridge =
+  typeof window !== "undefined"
+    ? window.location !== window.parent.location
+    : false;
+
 storyblokInit({
   accessToken: process.env.NEXT_APP_SB_TOKEN,
   use: [apiPlugin],
+  bridge: shouldUseBridge,
   components,
 });
 
