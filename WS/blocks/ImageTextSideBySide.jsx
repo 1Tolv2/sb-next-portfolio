@@ -32,7 +32,10 @@ const ImageTextSideBySide = ({ blok }) => {
               {blok?.skills?.map((skill, index) => {
                 return (
                   <li key={index + skill}>
-                    <IconWithText icon={skill?.icon?.filename}>
+                    <IconWithText
+                      icon={skill?.icon?.filename}
+                      alt={skill?.icon?.alt}
+                    >
                       {skill?.text}
                     </IconWithText>
                   </li>
