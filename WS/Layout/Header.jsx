@@ -12,7 +12,11 @@ const Header = ({ config, story }) => {
             <li key={item._uid} className="sm:mr-5 lg:mr-14 w-fit">
               <Link className="flex items-center" href={item?.link?.url || "/"}>
                 {item.icon !== "" && (
-                  <img className="w-12 mr-3" src={item?.icon?.filename} />
+                  <img
+                    className="w-12 mr-3"
+                    src={item?.icon?.filename}
+                    alt={item?.icon?.alt}
+                  />
                 )}
                 {item.text && <Text type="emphasizeBig">{item.text}</Text>}
               </Link>

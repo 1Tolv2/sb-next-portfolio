@@ -4,7 +4,7 @@ import Text from "./Typography/Text";
 const IconWithText = ({ icon, children }) => {
   return (
     <div className={`w-20 lg:w-28 h-auto`}>
-      <img className="w-12 lg:w-20 mx-auto" src={icon} />
+      <img className="w-12 lg:w-20 mx-auto" src={icon} alt="icon" />
       <Text align="center">{children}</Text>
     </div>
   );

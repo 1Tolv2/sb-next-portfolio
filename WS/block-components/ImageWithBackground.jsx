@@ -8,7 +8,11 @@ const ImageWithBackground = ({ blok }) => {
       }`}
     >
       <div className="w-full relative mx-auto overflow-y-clip">
-        <img src={blok?.background_image.filename} className="w-full h-auto" />
+        <img
+          src={blok?.background_image?.filename}
+          alt={blok?.background_image?.alt}
+          className="w-full h-auto"
+        />
       </div>
       <div className="flex justify-center md:items-center absolute w-full h-auto">
         <img
@@ -16,6 +20,7 @@ const ImageWithBackground = ({ blok }) => {
             (blok?.y_axis > 0 ? "top-" : "bottom") + blok?.y_axis
           } sm:${(blok?.x_axis > 0 ? "right-" : "left") + blok?.x_axis}`}
           src={blok?.avatar_image?.filename}
+          alt={blok?.avatar_image?.alt}
         />
       </div>
     </div>

@@ -33,14 +33,22 @@ const ProjectMobileCard = ({ story }) => {
               href={nestedBlok?.github_link?.url || "/"}
             >
               <Text type="emphasize">Go to demo</Text>
-              <img className="ml-2 h-4 lg:h-6" src="/external_link_icon.svg" />
+              <img
+                className="ml-2 h-4 lg:h-6"
+                src="/external_link_icon.svg"
+                alt="external link icon"
+              />
             </Link>
             <Link
               className="flex items-center h-fit w-fit mr-2"
               href={nestedBlok?.github_link?.url || "/"}
             >
               <Text type="emphasize">View source code</Text>
-              <img className="ml-2 h-4 lg:h-6" src="/external_link_icon.svg" />
+              <img
+                className="ml-2 h-4 lg:h-6"
+                src="/external_link_icon.svg"
+                alt="external link icon"
+              />
             </Link>
           </div>
         </div>
@@ -48,6 +56,7 @@ const ProjectMobileCard = ({ story }) => {
         <img
           className="w-full self-end"
           src={nestedBlok?.images?.[0]?.filename}
+          alt={nestedBlok?.images?.[0]?.alt}
         />
       </div>
     </div>

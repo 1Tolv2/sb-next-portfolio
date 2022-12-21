@@ -23,6 +23,7 @@ const ModalContactInfo = ({ blok, hidden }) => {
               <img
                 className="w-4 mr-2 self-start pt-0.5"
                 src={item?.icon?.filename}
+                alt={item?.icon?.alt}
               />
 
               <Text type="emphasize">{text}</Text>
