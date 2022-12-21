@@ -29,6 +29,7 @@ module.exports = {
       maxWidth: {
         150: "50vw",
       },
+      backgroundImage: { "card-background": "url('/paper-bg.svg')" },
     },
   },
   plugins: [],
