@@ -7,14 +7,14 @@ const renderArticleCard = (article) => {
   const { content } = article;
   return (
     <div className="relative h-fit w-full lg:mt-16 " key={article.uuid}>
-      <div className="w-full h-72">
+      <div className="w-full h-[45vw] lg:h-[15vw]">
         <div
           style={{ backgroundImage: `url(${content?.image?.filename})` }}
           className="w-full h-full bg-center bg-cover"
         />
-        <div className="absolute top-0 left-0 w-full h-72 bg-secondary-main opacity-40" />
+        <div className="absolute top-0 left-0 w-full h-[45vw] lg:h-[15vw] bg-secondary-main opacity-40" />
       </div>
-      <div className="flex flex-col justify-between relative bottom-16 w-11/12 min-h-[380px] mx-auto bg-card-background bg-cover bg-top px-3 lg:px-5 pt-4 lg:pt-11 pb-3 lg:pb-7">
+      <div className="flex flex-col justify-between relative bottom-16 w-11/12 md:min-h-[250px] lg:min-h-[380px] mx-auto bg-card-background bg-cover bg-top px-3 lg:px-5 pt-4 lg:pt-11 pb-3 lg:pb-7">
         <div>
           <Heading type="h3">{article?.name}</Heading>
           <Text>{content?.summary}</Text>
