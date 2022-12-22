@@ -12,6 +12,7 @@ const Avatar = ({ blok }) => {
         >
           <Image
             fill
+            priority
             src={blok?.avatar_image?.filename}
             alt={blok?.avatar_image?.alt}
           />
