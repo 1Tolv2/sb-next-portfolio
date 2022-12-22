@@ -92,6 +92,7 @@ export async function getStaticProps({ params, locale }) {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
   const configData = await storyblokApi.get(`cdn/stories`, {
+    ...sbParams,
     starts_with: "config",
   });
 
