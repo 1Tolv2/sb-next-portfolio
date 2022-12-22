@@ -17,4 +17,11 @@ export const generateSitemap = async (pages) => {
         </urlset>`;
 
   fs.writeFileSync("public/sitemap.xml", sitemap);
+
+  const robots = `Sitemap: ${process.env.NEXT_PUBLIC_SITE_URL}sitemap.xml
+  User-agent: *
+  Allow: /*
+  Disallow: /api/*`;
+
+  fs.writeFileSync("public/robots.txt", robots);
 };
