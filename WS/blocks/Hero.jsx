@@ -31,7 +31,7 @@ const Hero = ({ blok }) => {
         <div className="flex w-full justify-center sm:justify-start md:flex-col lg:flex-row my-4 lg:mb-auto  ">
           <Button event={() => setIsModalVisible(true)}>
             <Text type="emphasize" isBackgroundDark={true}>
-              View CV
+              {blok?.button_text}
             </Text>
           </Button>
         </div>
