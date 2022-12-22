@@ -26,7 +26,7 @@ const ImageTextSideBySide = ({ blok }) => {
           <RichTextRenderer content={blok?.text} />
           <div className="w-full mt-5 md:mt-10">
             <Heading type="h3" isBackgroundDark={isBgColorDark}>
-              My Skills:
+              {blok?.skill_title}
             </Heading>
             <ul className="grid grid-cols-3 xl:grid-cols-4 gap-2 md:mt-4">
               {blok?.skills?.map((skill, index) => {
