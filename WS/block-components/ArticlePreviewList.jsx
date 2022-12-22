@@ -42,8 +42,10 @@ const ArticlePreviewList = ({ blok }) => {
   return (
     <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-14 items-end">
       {blok?.articles?.map((article) => {
-        article.content.link_text = blok?.link_text || "";
-        return renderArticleCard(article);
+        if (article.content) {
+          article.content.link_text = blok?.link_text || "";
+          return renderArticleCard(article);
+        }
       })}
     </div>
   );
