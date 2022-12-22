@@ -7,6 +7,7 @@ import {
 } from "@storyblok/react";
 import Layout from "../WS/Layout";
 import CoverModal from "../WS/components/CoverModal";
+import { generateSitemap } from "../WS/utils/sitemap";
 
 const ModalContext = createContext();
 
@@ -62,6 +63,8 @@ export async function getStaticPaths() {
       paths.push({ params: { slug: splittedSlug } });
     }
   });
+
+  generateSitemap(paths);
   return {
     paths,
     fallback: false,
