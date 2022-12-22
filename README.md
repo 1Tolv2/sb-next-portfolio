@@ -82,32 +82,23 @@ after that I setup a storyblok space and started mapping out what blocks I would
 ## TO DO:
 
 Primary:
-[x] make mobile project responsive
-[ ] Robots.txt
-[x] Better looking return arrow on sub pages header
-[ ] add real articles
-[x] add real projects
-[x] fix locales
-[x] Style 404 page
-[ ] check all translations
-[ ] change all img tags to next/image add sizes
+[ ] Fix language issue in projects and articles
 [ ] fix storyblok preview
-[ ] check responsivness of article card thumbnail
-[ ] check responsiveness of article cards padding
-[ ] add project page (GOOD README on github)
+[ ] add real articles
+[ ] Make dynamic arrow for view more links
 
 Secondary:
+[ ] change all img tags to next/image add sizes
 [ ] Add language switch
 [ ] Check lighthouse
 [ ] make header thinner and in mobileview. make buttons more spaced in mobile
 [ ] At refresh the article sections clips strangely for a second
 [ ] menu should fade up when scrolling
 [ ] project focus logic to be implemented
-[ ] mobile project card
+[ ] tidy up mobile project card
 [ ] Make desktop/mobile frame automatic by the code so the user only needs to add an image
 [ ] Finish motorcycle avatar
-[ ] Make dynamic arrow for view more links
-[ ] Make project thumbnails
+[x] Make project thumbnails
 
 Archived:
 [x] article div covers link element
@@ -129,3 +120,13 @@ Archived:
 [x] Sitemap
 [x] move repo to private GitHuben
 [x] deploy to vercel
+[x] make mobile project responsive
+[x] Robots.txt
+[x] Better looking return arrow on sub pages header
+[x] add real projects
+[x] fix locales
+[x] Style 404 page
+[x] check all translations
+[x] check responsivness of article card thumbnail
+[x] check responsiveness of article cards padding
+[x] add project page (GOOD README on github)
