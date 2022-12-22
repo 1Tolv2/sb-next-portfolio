@@ -51,16 +51,22 @@ export async function getStaticPaths() {
 
   let paths = [];
   Object.keys(links).forEach((linkKey) => {
-    if (links[linkKey].is_folder || hiddenSlugs.includes(links[linkKey].slug)) {
-      return;
-    } else if (links[linkKey].slug === "home") {
-      paths.push({ params: { slug: [""] } });
-    } else if (/^projects\/(.+)/.test(links[linkKey].slug)) {
+    const slug = data.links[linkKey].slug;
+    if (links[linkKey].is_folder || hiddenSlugs.includes(slug)) return;
+
+    if (slug === "home") {
+      paths.push(
+        { params: { slug: [""] }, locale: "en" },
+        { params: { slug: [""] }, locale: "sv" }
+      );
+    } else if (/^projects\/(.+)/.test(slug)) {
       return;
     } else {
-      const slug = links[linkKey].slug;
       let splittedSlug = slug.split("/");
-      paths.push({ params: { slug: splittedSlug } });
+      paths.push(
+        { params: { slug: splittedSlug }, locale: "en" },
+        { params: { slug: splittedSlug }, locale: "sv" }
+      );
     }
   });
 
@@ -71,7 +77,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params, locale }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
@@ -80,6 +86,7 @@ export async function getStaticProps({ params }) {
       "project-preview-list.projects",
       "article-preview-list.articles",
     ],
+    language: locale,
   };
 
   const storyblokApi = getStoryblokApi();
