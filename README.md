@@ -82,17 +82,18 @@ after that I setup a storyblok space and started mapping out what blocks I would
 ## TO DO:
 
 Primary:
-[ ] remove locale from production
-[ ] fix storyblok preview
+[x] remove locale from production
+[x] fix storyblok preview
 [ ] add article about the portfolio
-[ ] Make dynamic arrow for view more links
+[ ] make dynamic arrow for view more links
+[ ] move fetches out from page ([[...slug]].js)
 
 Secondary:
 [ ] fix language issue in projects and articles
 [ ] change all img tags to next/image add sizes
 [ ] Add language switch
 [ ] Check lighthouse
-[ ] make header thinner and in mobileview. make buttons more spaced in mobile
+[x] make header thinner and in mobileview. make buttons more spaced in mobile
 [ ] At refresh the article sections clips strangely for a second
 [ ] menu should fade up when scrolling
 [ ] project focus logic to be implemented
