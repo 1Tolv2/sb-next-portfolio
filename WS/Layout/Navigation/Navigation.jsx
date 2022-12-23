@@ -4,7 +4,7 @@ import NavigationReturn from "./variations/NavigationReturn";
 
 const Navigation = ({ config, type, children }) => {
   return (
-    <nav className="fixed z-40 w-screen h-28 xl:h-36 flex justify-between items-center bg-white">
+    <nav className="fixed z-40 w-screen h-24 xl:h-28 flex justify-between items-center bg-transparent-white">
       {type === "page" ? (
         <NavigationMain config={config} />
       ) : (

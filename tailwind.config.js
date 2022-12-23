@@ -13,7 +13,8 @@ module.exports = {
       accent: { main: "#FF686B", dark: "#FF5C5F" },
       neutral: "#F7F7FF",
       black: "#000000",
-      white: "#FFFFFF",
+      white: "FFFFFF",
+      transparent: { white: "rgba(255,255,255, 0.8)" },
     },
     container: {
       center: true,
