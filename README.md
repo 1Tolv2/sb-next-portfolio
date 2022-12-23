@@ -90,7 +90,7 @@ Primary:
 [x] move fetches out from page ([[...slug]].js)
 
 Secondary:
-[ ] Portfolio same size on PL and CV
+[x] Portfolio same size img on PL and CV
 [ ] fix language issue in projects and articles
 [ ] change all img tags to next/image add sizes
 [ ] Add language switch
