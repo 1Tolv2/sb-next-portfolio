@@ -11,7 +11,7 @@ const ModalContactInfo = ({ blok, hidden }) => {
           : hidden
           ? "md:hidden print:hidden"
           : "hidden md:block print:block"
-      } w-full md:w-auto print:w-full print:h-min`}
+      } w-full md:w-auto print:w-full print:h-min text-center`}
     >
       <Heading type="h4">Contact</Heading>
 

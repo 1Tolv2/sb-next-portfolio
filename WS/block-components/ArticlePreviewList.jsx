@@ -6,7 +6,10 @@ import Link from "next/link";
 const renderArticleCard = (article) => {
   const { content } = article;
   return (
-    <div className="relative h-fit w-full lg:mt-16 " key={article.uuid}>
+    <div
+      className="relative h-fit w-full lg:w-1/3 lg:mt-16 "
+      key={article.uuid}
+    >
       <div className="w-full h-[45vw] lg:h-[15vw]">
         <div
           style={{ backgroundImage: `url(${content?.image?.filename})` }}
@@ -40,7 +43,7 @@ const renderArticleCard = (article) => {
 
 const ArticlePreviewList = ({ blok }) => {
   return (
-    <div className="grid lg:grid-cols-3 lg:grid-rows-1 w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-14 items-end">
+    <div className="flex flex-col justify-evenly lg:flex-row w-3/4 lg:w-auto mt-5 md:mt-0 mx-auto -mb-16 gap-x-5 xl:gap-x-14 items-end">
       {blok?.articles?.map((article) => {
         if (article.content) {
           article.content.link_text = blok?.link_text || "";

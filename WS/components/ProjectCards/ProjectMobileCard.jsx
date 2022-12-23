@@ -7,7 +7,7 @@ import AccentLine from "../AccentLine";
 const ProjectMobileCard = ({ story }) => {
   const nestedBlok = story?.content;
   return (
-    <div className="h-fit w-full" key={story.id}>
+    <div className="h-fit w-full lg:w-1/3" key={story.id}>
       <Heading type="h3">{nestedBlok?.title}</Heading>
       <div className="flex lg:flex-col xl:flex-row">
         <div className="flex flex-col relative">
