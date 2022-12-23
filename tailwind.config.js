@@ -14,7 +14,7 @@ module.exports = {
       neutral: "#F7F7FF",
       black: "#000000",
       white: "#FFFFFF",
-      transparent: { white: "rgba(255,255,255, 0.8)" },
+      transparent: { white: "rgba(255,255,255, 0.85)" },
     },
     container: {
       center: true,
