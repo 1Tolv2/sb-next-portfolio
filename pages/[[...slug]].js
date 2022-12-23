@@ -55,18 +55,12 @@ export async function getStaticPaths() {
     if (links[linkKey].is_folder || hiddenSlugs.includes(slug)) return;
 
     if (slug === "home") {
-      paths.push(
-        { params: { slug: [""] }, locale: "en" },
-        { params: { slug: [""] }, locale: "sv" }
-      );
+      paths.push({ params: { slug: [""] } });
     } else if (/^projects\/(.+)/.test(slug)) {
       return;
     } else {
       let splittedSlug = slug.split("/");
-      paths.push(
-        { params: { slug: splittedSlug }, locale: "en" },
-        { params: { slug: splittedSlug }, locale: "sv" }
-      );
+      paths.push({ params: { slug: splittedSlug } });
     }
   });
 
@@ -77,7 +71,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
@@ -86,7 +80,6 @@ export async function getStaticProps({ params, locale }) {
       "project-preview-list.projects",
       "article-preview-list.articles",
     ],
-    language: locale,
   };
 
   const storyblokApi = getStoryblokApi();
