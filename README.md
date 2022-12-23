@@ -82,10 +82,11 @@ after that I setup a storyblok space and started mapping out what blocks I would
 ## TO DO:
 
 Primary:
-[ ] remove locale from production
+[x] remove locale from production
 [ ] fix storyblok preview
 [ ] add article about the portfolio
-[ ] Make dynamic arrow for view more links
+[ ] make dynamic arrow for view more links
+[ ] move fetches out from page ([[...slug]].js)
 
 Secondary:
 [ ] fix language issue in projects and articles
