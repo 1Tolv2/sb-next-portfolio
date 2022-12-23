@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Avatar = ({ blok }) => {
   return (
-    <div className="relative lg:bottom-16 flex md:justify-center self-center w-full h-96 lg:max-w-3xl lg:h-100 truncate">
+    <div className="relative lg:bottom-16 flex md:justify-center self-center w-full h-80 sm:h-96 lg:max-w-3xl lg:h-100 truncate mt-12">
       <div className="avatar_bg relative left-0 lg:top-32 flex justify-center items-center bg-secondary-main">
         <div
           className={`h-[90%] w-full absolute lg:${

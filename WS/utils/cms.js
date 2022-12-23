@@ -4,7 +4,7 @@ import { generateSitemap } from "./sitemap";
 class StoryblokUtils {
   static getDefaultSBParams() {
     return {
-      version: process.env.NODE_ENV !== "development" ? "draft" : "published",
+      version: process.env.NODE_ENV === "development" ? "draft" : "published",
       resolve_relations: [
         "project-preview-list.projects",
         "article-preview-list.articles",

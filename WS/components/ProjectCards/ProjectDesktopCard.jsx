@@ -5,8 +5,8 @@ import Text from "../Typography/Text";
 import AccentLine from "../AccentLine";
 
 const ProjectDesktopCard = ({ story }) => {
-  const nestedBlok = story?.content;
-
+  const nestedBlok = story?.project?.content;
+  const { link_texts } = story;
   return (
     <div className="h-fit w-full lg:w-1/3" key={story.id}>
       <Heading type="h3">{nestedBlok?.title}</Heading>
@@ -26,32 +26,41 @@ const ProjectDesktopCard = ({ story }) => {
           })}
         </div>
         <div className="grid grid-rows-2 xl:grid-cols-2 xl:grid-rows-1 items-stretch justify-between my-3 ">
-          <Link
-            className="flex items-center h-fit ml-1 mb-1 lg:mb-0"
-            href={nestedBlok?.github_link?.url || "/"}
-            target={nestedBlok?.github_link?.target}
-            aria-label="Go to deployed demo"
-          >
-            <Text type="emphasize">Go to demo</Text>
-            <img
-              className="ml-2 h-4 lg:h-6"
-              src="/external_link_icon.svg"
-              alt="external link icon"
-            />
-          </Link>
-          <Link
-            className="flex justify-end items-center h-fit mr-2"
-            href={nestedBlok?.github_link?.url || "/"}
-            target={nestedBlok?.github_link?.target}
-            aria-label="Go to source code on github"
-          >
-            <Text type="emphasize">View source code</Text>
-            <img
-              className="ml-2 h-4 lg:h-6"
-              src="/external_link_icon.svg"
-              alt="external link icon"
-            />
-          </Link>
+          {nestedBlok?.deployed_link?.url ? (
+            <Link
+              className="flex items-center h-fit ml-1 mb-1 lg:mb-0"
+              href={nestedBlok?.deployed_link?.url}
+              target={nestedBlok?.deployed_link?.target}
+              aria-label="Go to deployed demo"
+            >
+              <Text type="emphasize">{link_texts?.deploy}</Text>
+              <img
+                className="ml-2 h-4 lg:h-6"
+                src="/external_link_icon.svg"
+                alt="external link icon"
+              />
+            </Link>
+          ) : (
+            <div />
+          )}
+
+          {nestedBlok?.github_link?.url ? (
+            <Link
+              className="flex justify-end items-center h-fit mr-2"
+              href={nestedBlok?.github_link?.url}
+              target={nestedBlok?.github_link?.target}
+              aria-label="Go to source code on github"
+            >
+              <Text type="emphasize">{link_texts?.source_code}</Text>
+              <img
+                className="ml-2 h-4 lg:h-6"
+                src="/external_link_icon.svg"
+                alt="external link icon"
+              />
+            </Link>
+          ) : (
+            <div />
+          )}
         </div>
         <img
           className="w-full"
