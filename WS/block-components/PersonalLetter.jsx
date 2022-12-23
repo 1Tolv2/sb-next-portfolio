@@ -13,7 +13,7 @@ const PersonalLetter = ({ blok, contactInfo }) => {
           {blok?.preamble}
         </Text>
       </div>
-      <div className="flex items-center gap-5 sm:gap-0 sm:block sm:w-1/4">
+      <div className="flex items-center gap-5 sm:gap-0 sm:block sm:w-1/4 w-full">
         <div className="flex justify-center items-center print:justify-center w-4/12 sm:max-h-[calc(401px-20px)] sm:w-[calc(100%-20px)] sm:mb-[20px] overflow-clip print:block print:overflow-clip">
           <img
             className="h-auto w-full"
@@ -23,7 +23,7 @@ const PersonalLetter = ({ blok, contactInfo }) => {
         </div>
         <ModalContactInfo blok={contactInfo?.body} hidden="none" />
       </div>
-      <div className="w-full text-center sm:pl-8 print:pl-4 print:w-full">
+      <div className="w-full md:w-3/4 text-center sm:pl-8 print:pl-4 print:w-full">
         <div className="hidden sm:block">
           <Heading>{blok?.title}</Heading>
           <Text align="center" type="emphasizeBig">
