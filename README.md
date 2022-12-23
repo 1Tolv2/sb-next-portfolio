@@ -82,12 +82,13 @@ after that I setup a storyblok space and started mapping out what blocks I would
 ## TO DO:
 
 Primary:
-[ ] Fix language issue in projects and articles
+[ ] remove locale from production
 [ ] fix storyblok preview
-[ ] add real articles
+[ ] add article about the portfolio
 [ ] Make dynamic arrow for view more links
 
 Secondary:
+[ ] fix language issue in projects and articles
 [ ] change all img tags to next/image add sizes
 [ ] Add language switch
 [ ] Check lighthouse
