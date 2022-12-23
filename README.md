@@ -86,7 +86,7 @@ Primary:
 [x] fix storyblok preview
 [ ] add article about the portfolio
 [ ] make dynamic arrow for view more links
-[ ] move fetches out from page ([[...slug]].js)
+[x] move fetches out from page ([[...slug]].js)
 
 Secondary:
 [ ] fix language issue in projects and articles

@@ -30,7 +30,7 @@ const TitledGrid = ({ blok }) => {
         ))}
       </div>
       {blok?.link_text && (
-        <div className="relative z-10 self-end mt-10 mr-14">
+        <div className="relative z-10 self-center sm:self-end mt-10 sm:mr-14">
           <Link
             href={blok?.page_link?.cached_url || "/"}
             aria-label={`Go to page to view more ${blok?.preamble}`}
@@ -40,10 +40,15 @@ const TitledGrid = ({ blok }) => {
             </Text>
 
             <span
-              className={`h-2 w-12 ml-24
+              className={`flex items-center h-2 w-full sm:w-32 md:w-60 sm:ml-24
            text-${isBgColorDark ? "neutral" : "primary-light"}`}
             >
-              {"-------------------------------------------------->"}
+              <span
+                className={` w-full h-0.5 bg-${
+                  isBgColorDark ? "neutral" : "primary-light"
+                }`}
+              />
+              {">"}
             </span>
           </Link>
         </div>
