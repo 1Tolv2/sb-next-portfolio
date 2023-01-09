@@ -25,7 +25,7 @@
 
 ## About The Project
 
-This portfolio consists of a main landing page and article and project sub pages. It renders all the content from the headless CMS Storyblok and has a swedish and english version.
+This portfolio consists of a main landing page and article and project sub pages. It renders all the content from the headless CMS Storyblok.
 
 <div align="center">
 <img src="./public/demo.png" alt="Application screenshot" style="width: 100%;max-width: 1000px;"/>
@@ -78,58 +78,3 @@ Before starting the project I began to mockup the website in Figma
 <img src="public/desktop-1920x1080-mockup.svg" alt="desktop mockup of the web site" width="100%" height="auto" >
 
 after that I setup a storyblok space and started mapping out what blocks I would need.
-
-## TO DO:
-
-Primary:
-[ ] At refresh the article sections clips strangely for a second
-[x] remove locale from production
-[x] fix storyblok preview
-[ ] add article about the portfolio
-[x] make dynamic arrow for view more links
-[x] move fetches out from page ([[...slug]].js)
-
-Secondary:
-[x] Portfolio same size img on PL and CV
-[ ] fix language issue in projects and articles
-[ ] change all img tags to next/image add sizes
-[ ] Add language switch
-[ ] Check lighthouse
-[x] make header thinner and in mobileview. make buttons more spaced in mobile
-[ ] menu should fade up when scrolling
-[ ] project focus logic to be implemented
-[ ] tidy up mobile project card
-[ ] Make desktop/mobile frame automatic by the code so the user only needs to add an image
-[ ] Finish motorcycle avatar
-[x] Make project thumbnails
-
-Archived:
-[x] article div covers link element
-[x] link element missing on featured projects
-[x] add article logic
-[x] add cv and personligt brev modal
-[x] build CV component
-[x] build PL component
-[x] make them downloadable
-[x] change cv button text to "Download"
-[x] Prevent printing multiple pages of one page
-[x] Exit button for covermodal
-[x] transparent black overlay on content when menu is open
-[x] About text, lägg till riktig
-[x] Style article page
-[x] overlay on article cards needs to be delt with
-[x] size of article thumbnail needs to be contained
-[x] article cards paper styling
-[x] Sitemap
-[x] move repo to private GitHuben
-[x] deploy to vercel
-[x] make mobile project responsive
-[x] Robots.txt
-[x] Better looking return arrow on sub pages header
-[x] add real projects
-[x] fix locales
-[x] Style 404 page
-[x] check all translations
-[x] check responsivness of article card thumbnail
-[x] check responsiveness of article cards padding
-[x] add project page (GOOD README on github)
