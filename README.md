@@ -75,7 +75,7 @@ npm run dev
 ### Preparation
 
 Before starting the project I began to mockup the website in Figma
-<img src="public/desktop-1920x1080-mockup.svg" alt="desktop mockup of the web site" width="100%" height="auto" ><img src="/public/mobile-360x760-mockup.svg" alt="mobile mockup of the website" width="50%" height="auto" >
+<img src="public/desktop-1920x1080-mockup.svg" alt="desktop mockup of the web site" width="100%" height="auto" >
 
 after that I setup a storyblok space and started mapping out what blocks I would need.
 
